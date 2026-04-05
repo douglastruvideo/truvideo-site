@@ -1,13 +1,13 @@
-# Actual redirects (301) - old paths to new paths
-/sdk  /platform-video-sdk.html  301
-/vqs  /platform-vqs.html  301
-/messaging  /platform-messaging.html  301
-/ai  /platform-ai.html  301
-/automotive  /solutions-automotive.html  301
-/fleet  /solutions-fleet.html  301
-/aviation  /solutions-aviation.html  301
-/field-service  /solutions-field-service.html  301
-/insurance  /solutions-insurance.html  301
-/construction  /solutions-construction.html  301
-/blog  /articles.html  301
+# Actual redirects (301) - old shorthand paths to canonical clean URLs
+/sdk  /platform-video-sdk  301
+/vqs  /platform-vqs  301
+/messaging  /platform-messaging  301
+/ai  /platform-ai  301
+/automotive  /solutions-automotive  301
+/fleet  /solutions-fleet  301
+/aviation  /solutions-aviation  301
+/field-service  /solutions-field-service  301
+/insurance  /solutions-insurance  301
+/construction  /solutions-construction  301
+/blog  /articles  301
 /blog/*  /articles/:splat  301
