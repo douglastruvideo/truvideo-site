@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://truvideo.co/sitemap.xml

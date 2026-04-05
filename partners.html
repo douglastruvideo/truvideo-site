@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Partners — TruVideo Visual Intelligence Platform</title>
+  <meta name="description" content="Partner with TruVideo to embed AI video and messaging into your platform. Software partnerships, OEM white-label, system integrators, and reseller programs. One integration, six verticals. Your brand, our technology.">
+  <meta name="keywords" content="TruVideo partner program, video SDK partnership, DMS integration partner, visual intelligence partner, white label video platform, OEM communication solution, software partnership, automotive video integration">
+  <link rel="canonical" href="https://truvideo.co/partners">
+  <link rel="icon" href="/assets/img/favicon.png" type="image/png">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+  <style>
+    .partner-logo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .partner-logo-card {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 24px;
+      border-radius: 16px;
+      background: rgba(20,55,84,0.4);
+      border: 1px solid rgba(148,204,255,0.06);
+      transition: border-color 0.2s, transform 0.2s;
+      min-height: 100px;
+    }
+    .partner-logo-card:hover {
+      border-color: rgba(148,204,255,0.15);
+      transform: translateY(-2px);
+    }
+    .partner-logo-card img {
+      max-height: 40px;
+      max-width: 140px;
+      filter: brightness(0) invert(0.8);
+      opacity: 0.7;
+      transition: opacity 0.2s;
+    }
+    .partner-logo-card:hover img {
+      opacity: 1;
+    }
+    .partner-logo-card .partner-name-text {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--on-surface-variant);
+      letter-spacing: 0.02em;
+    }
+
+    .oem-benefit-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .oem-benefit {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      padding: 28px;
+      border-radius: 16px;
+      background: rgba(20,55,84,0.35);
+      border: 1px solid rgba(148,204,255,0.05);
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .oem-benefit:hover {
+      border-color: rgba(106,215,218,0.2);
+      transform: translateY(-2px);
+    }
+    .oem-benefit-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      background: rgba(106,215,218,0.08);
+      color: var(--secondary);
+    }
+    .oem-benefit h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin: 0 0 8px;
+      color: var(--on-surface);
+    }
+    .oem-benefit p {
+      font-size: 0.85rem;
+      color: var(--on-surface-variant);
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .integration-flow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      margin: 48px 0;
+      flex-wrap: wrap;
+    }
+    .integration-flow-step {
+      text-align: center;
+      padding: 24px;
+      min-width: 160px;
+    }
+    .integration-flow-step .material-symbols-outlined {
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+    .integration-flow-step h4 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--on-surface);
+      margin: 0 0 4px;
+    }
+    .integration-flow-step p {
+      font-size: 0.8rem;
+      color: var(--on-surface-variant);
+      margin: 0;
+    }
+    .integration-flow-arrow {
+      font-size: 1.5rem;
+      color: var(--on-surface-variant);
+      opacity: 0.3;
+    }
+    @media (max-width: 768px) {
+      .integration-flow { flex-direction: column; }
+      .integration-flow-arrow { transform: rotate(90deg); }
+    }
+
+    .partner-type-tabs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 48px;
+      flex-wrap: wrap;
+    }
+    .partner-type-tab {
+      padding: 12px 24px;
+      border-radius: 12px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--on-surface-variant);
+      background: rgba(148,204,255,0.06);
+      border: 1px solid rgba(148,204,255,0.08);
+      cursor: pointer;
+      transition: all 0.2s;
+      text-decoration: none;
+    }
+    .partner-type-tab:hover, .partner-type-tab.active {
+      background: rgba(148,204,255,0.12);
+      color: var(--on-surface);
+      border-color: rgba(148,204,255,0.2);
+    }
+
+    .partner-quote {
+      padding: 40px;
+      border-left: 3px solid var(--secondary);
+      margin: 48px 0;
+      background: rgba(106,215,218,0.03);
+      border-radius: 0 16px 16px 0;
+    }
+    .partner-quote blockquote {
+      font-size: 1.1rem;
+      font-style: italic;
+      color: var(--on-surface);
+      line-height: 1.7;
+      margin: 0 0 16px;
+    }
+    .partner-quote cite {
+      font-size: 0.85rem;
+      color: var(--on-surface-variant);
+      font-style: normal;
+    }
+
+    .program-detail {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+      margin: 48px 0;
+      padding: 48px;
+      border-radius: 20px;
+      background: rgba(20,55,84,0.3);
+      border: 1px solid rgba(148,204,255,0.06);
+    }
+    @media (max-width: 768px) {
+      .program-detail { grid-template-columns: 1fr; gap: 32px; padding: 28px; }
+    }
+    .program-detail h3 {
+      font-size: 1.4rem;
+      font-weight: 800;
+      margin: 0 0 16px;
+      letter-spacing: -0.01em;
+    }
+    .program-detail p {
+      font-size: 0.9rem;
+      color: var(--on-surface-variant);
+      line-height: 1.7;
+      margin: 0 0 16px;
+    }
+    .program-checklist {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .program-checklist li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 0;
+      font-size: 0.9rem;
+      color: var(--on-surface-variant);
+      border-bottom: 1px solid rgba(148,204,255,0.04);
+    }
+    .program-checklist li:last-child { border-bottom: none; }
+    .program-checklist .material-symbols-outlined {
+      font-size: 18px;
+      color: var(--secondary);
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body>
+<div class="mesh-bg"></div>
+<nav class="site-nav"><div class="nav-inner"><a href="/" class="nav-logo">Tru<span>Video</span></a><button class="nav-toggle" aria-label="Menu">&#9776;</button><ul class="nav-links"><li class="nav-dropdown"><a href="/platform.html" class="nav-dropdown-trigger">Platform</a><div class="nav-dropdown-menu"><div class="dd-label">Capabilities</div><a href="/platform.html">Platform Overview</a><a href="/platform-video-sdk.html">Video SDK</a><a href="/platform-vqs.html">Video Query Service</a><a href="/platform-messaging.html">Intelligent Messaging</a><a href="/platform-ai.html">AI &amp; Computer Vision</a></div></li><li class="nav-dropdown"><a href="/solutions-automotive.html" class="nav-dropdown-trigger">Solutions</a><div class="nav-dropdown-menu"><div class="dd-label">Industries</div><a href="/solutions-automotive.html">Automotive</a><a href="/solutions-fleet.html">Fleet &amp; Transportation</a><a href="/solutions-aviation.html">Aviation &amp; MRO</a><a href="/solutions-field-service.html">Field Service</a><a href="/solutions-insurance.html">Insurance</a><a href="/solutions-construction.html">Construction</a></div></li><li><a href="/trucast.html">TruCast</a></li><li><a href="/partners.html">Partners</a></li><li><a href="/about.html">Company</a></li><li><a href="/articles.html">Articles</a></li><li><a href="/contact.html" class="nav-cta">Get a Demo</a></li></ul></div></nav>
+
+<!-- ============ HERO ============ -->
+<section class="hero hero-sm">
+  <div class="pill"><span class="material-symbols-outlined" style="font-size:16px">handshake</span> Partners</div>
+  <h1 class="fade-up">We power your platform.<br><span class="accent">You own the customer.</span></h1>
+  <p class="subtitle fade-up fade-up-d1">TruVideo doesn't compete with partners — we make them stronger. Embed our Video SDK, integrate our AI, white-label the entire experience. Your brand. Your relationship. Our visual intelligence underneath.</p>
+  <div style="display:flex;gap:12px;flex-wrap:wrap" class="fade-up fade-up-d2">
+    <a href="/contact.html" class="btn btn-primary">Become a Partner</a>
+    <a href="#programs" class="btn btn-secondary">See Programs</a>
+  </div>
+</section>
+
+<!-- ============ INTEGRATION PARTNERS — LOGO GRID ============ -->
+<section class="section">
+  <div class="section-label">Ecosystem</div>
+  <h2>Integrated with the platforms <span style="color:var(--primary)">your customers use</span></h2>
+  <p class="lead">TruVideo connects natively with the systems that run your operations — DMS, fleet management, FSM, ERP, and communication platforms.</p>
+
+  <div class="partner-logo-grid">
+    <div class="partner-logo-card">
+      <img src="/assets/img/partner-cdk.png" alt="CDK Global" loading="lazy">
+    </div>
+    <div class="partner-logo-card">
+      <img src="/assets/img/partner-reynolds.jpg" alt="Reynolds and Reynolds" loading="lazy">
+    </div>
+    <div class="partner-logo-card">
+      <img src="/assets/img/partner-xtime.png" alt="Xtime" loading="lazy">
+    </div>
+    <div class="partner-logo-card">
+      <img src="/assets/img/partner-karmak.png" alt="Karmak" loading="lazy">
+    </div>
+    <div class="partner-logo-card">
+      <img src="/assets/img/partner-decisiv.jpg" alt="Decisiv" loading="lazy">
+    </div>
+    <div class="partner-logo-card">
+      <img src="/assets/img/partner-outsell.jpg" alt="Outsell" loading="lazy">
+    </div>
+    <div class="partner-logo-card">
+      <span class="partner-name-text">Tekion</span>
+    </div>
+    <div class="partner-logo-card">
+      <span class="partner-name-text">DealerSocket</span>
+    </div>
+    <div class="partner-logo-card">
+      <span class="partner-name-text">Vonage</span>
+    </div>
+    <div class="partner-logo-card">
+      <span class="partner-name-text">Qualcomm</span>
+    </div>
+    <div class="partner-logo-card">
+      <span class="partner-name-text">Fleetio</span>
+    </div>
+    <div class="partner-logo-card">
+      <span class="partner-name-text">Samsara</span>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ============ WHY PARTNER ============ -->
+<section class="section">
+  <div class="section-label">Why Partner</div>
+  <h2>The unfair advantage of <span style="color:var(--secondary)">not building it yourself</span></h2>
+
+  <div class="oem-benefit-grid">
+    <div class="oem-benefit">
+      <div class="oem-benefit-icon"><span class="material-symbols-outlined">rocket_launch</span></div>
+      <div>
+        <h4>Communication Innovation</h4>
+        <p>Add AI-powered video capture, messaging, and computer vision to your platform without a multi-year engineering investment. Ship visual intelligence features in weeks, not years.</p>
+      </div>
+    </div>
+    <div class="oem-benefit">
+      <div class="oem-benefit-icon"><span class="material-symbols-outlined">trending_up</span></div>
+      <div>
+        <h4>Expand Your Margins</h4>
+        <p>Video-enabled workflows drive measurable ROI for your customers — 30%+ increases in repair order revenue, 80% reduction in disputes. That value creation lets you charge more and retain longer.</p>
+      </div>
+    </div>
+    <div class="oem-benefit">
+      <div class="oem-benefit-icon"><span class="material-symbols-outlined">speed</span></div>
+      <div>
+        <h4>Speed to Market</h4>
+        <p>Our SDK is production-ready across iOS, Android, and Web. Pre-built connectors for major DMS, fleet, and FSM platforms. Your team integrates once — we handle the video infrastructure at scale.</p>
+      </div>
+    </div>
+    <div class="oem-benefit">
+      <div class="oem-benefit-icon"><span class="material-symbols-outlined">monitoring</span></div>
+      <div>
+        <h4>Seamless Reporting</h4>
+        <p>Unified analytics across every video interaction — capture rates, engagement, AI extraction accuracy, revenue attribution. White-label the dashboard or pipe data into your existing BI tools.</p>
+      </div>
+    </div>
+    <div class="oem-benefit">
+      <div class="oem-benefit-icon"><span class="material-symbols-outlined">code</span></div>
+      <div>
+        <h4>Low-Code Integration</h4>
+        <p>Drop-in SDK with pre-built UI components, REST APIs, and webhook events. Your engineers focus on your product — not on building video infrastructure, transcoding pipelines, or AI models.</p>
+      </div>
+    </div>
+    <div class="oem-benefit">
+      <div class="oem-benefit-icon"><span class="material-symbols-outlined">psychology</span></div>
+      <div>
+        <h4>Acquired Learning</h4>
+        <p>80M+ videos processed across 3,500+ locations. Our AI models have seen every edge case — bad lighting, noisy shops, shaky cameras, multilingual narration. You inherit all of that intelligence on day one.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="partner-quote">
+    <blockquote>"We evaluated building video in-house. The estimate was 18 months and 8 engineers. TruVideo's SDK had us in production in 6 weeks with one developer. The AI accuracy was better than what we could have built in two years."</blockquote>
+    <cite>— VP of Product, Top 5 DMS Provider</cite>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ============ HOW INTEGRATION WORKS ============ -->
+<section class="section">
+  <div class="section-label">Integration</div>
+  <h2>From first call to <span style="color:var(--primary)">live in production</span></h2>
+
+  <div class="integration-flow">
+    <div class="integration-flow-step">
+      <span class="material-symbols-outlined">handshake</span>
+      <h4>Scope</h4>
+      <p>Define use cases &amp; architecture</p>
+    </div>
+    <span class="integration-flow-arrow">→</span>
+    <div class="integration-flow-step">
+      <span class="material-symbols-outlined">code</span>
+      <h4>Integrate</h4>
+      <p>SDK drop-in, API hookup</p>
+    </div>
+    <span class="integration-flow-arrow">→</span>
+    <div class="integration-flow-step">
+      <span class="material-symbols-outlined">science</span>
+      <h4>Validate</h4>
+      <p>Sandbox testing, QA</p>
+    </div>
+    <span class="integration-flow-arrow">→</span>
+    <div class="integration-flow-step">
+      <span class="material-symbols-outlined">rocket_launch</span>
+      <h4>Launch</h4>
+      <p>Staged rollout, co-marketing</p>
+    </div>
+    <span class="integration-flow-arrow">→</span>
+    <div class="integration-flow-step">
+      <span class="material-symbols-outlined">trending_up</span>
+      <h4>Scale</h4>
+      <p>New verticals, features</p>
+    </div>
+  </div>
+
+  <div class="card-grid card-grid-3" style="margin-top:32px">
+    <div class="card glass" style="text-align:center">
+      <p style="font-size:2.5rem;font-weight:800;color:var(--primary);margin:0">6 weeks</p>
+      <p style="color:var(--on-surface-variant);font-size:0.85rem;margin:8px 0 0">Average time to production</p>
+    </div>
+    <div class="card glass" style="text-align:center">
+      <p style="font-size:2.5rem;font-weight:800;color:var(--secondary);margin:0">1 engineer</p>
+      <p style="color:var(--on-surface-variant);font-size:0.85rem;margin:8px 0 0">Typical integration team size</p>
+    </div>
+    <div class="card glass" style="text-align:center">
+      <p style="font-size:2.5rem;font-weight:800;color:var(--tertiary);margin:0">500+</p>
+      <p style="color:var(--on-surface-variant);font-size:0.85rem;margin:8px 0 0">Locations live via partners</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ============ PARTNERSHIP PROGRAMS ============ -->
+<section class="section" id="programs">
+  <div class="section-label">Programs</div>
+  <h2>Four ways to <span style="color:var(--secondary)">partner</span></h2>
+
+  <!-- Software / Technology Partners -->
+  <div class="program-detail" id="technology">
+    <div>
+      <div class="pill"><span class="material-symbols-outlined" style="font-size:16px">code</span> Technology Partners</div>
+      <h3>Embed visual intelligence<br>into your platform</h3>
+      <p>For DMS vendors, fleet management platforms, FSM tools, ERP providers, and any software company that wants to add video capture, AI analysis, and intelligent messaging without building it from scratch.</p>
+      <p>Integrate the TruVideo SDK into your product. Your customers record, analyze, and share video directly inside your application. We handle the infrastructure — capture, transcoding, AI processing, delivery — while you own the experience and the customer relationship.</p>
+      <a href="/contact.html" class="btn btn-primary btn-sm" style="margin-top:8px">Apply as Tech Partner</a>
+    </div>
+    <div>
+      <h4 style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--on-surface-variant);opacity:0.6;margin:0 0 16px">What you get</h4>
+      <ul class="program-checklist">
+        <li><span class="material-symbols-outlined">check</span> Full SDK access — iOS, Android, Web</li>
+        <li><span class="material-symbols-outlined">check</span> White-label UI components</li>
+        <li><span class="material-symbols-outlined">check</span> REST APIs &amp; webhook events</li>
+        <li><span class="material-symbols-outlined">check</span> VQS (AI) pipeline access</li>
+        <li><span class="material-symbols-outlined">check</span> BYOS support — recordings in your infra</li>
+        <li><span class="material-symbols-outlined">check</span> Dedicated integration engineer</li>
+        <li><span class="material-symbols-outlined">check</span> Sandbox environment</li>
+        <li><span class="material-symbols-outlined">check</span> Joint go-to-market support</li>
+        <li><span class="material-symbols-outlined">check</span> Revenue share on net-new customers</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- OEM / White-Label -->
+  <div class="program-detail" id="oem">
+    <div>
+      <div class="pill" style="background:rgba(106,215,218,0.08);color:var(--secondary)"><span class="material-symbols-outlined" style="font-size:16px">business</span> OEM / White-Label</div>
+      <h3>Your brand. Your CX.<br>Our technology underneath.</h3>
+      <p>For enterprises that want to offer AI-powered video and messaging as a native capability under their own brand. Scale CX, unify branding across locations, and control your customer data — powered by TruVideo's platform.</p>
+      <p>OEM partners get full white-label rights: custom UI skins, branded mobile apps, custom domain hosting, and dedicated infrastructure. Your customers never see the TruVideo name. You set the pricing. You own the data. We provide the engine.</p>
+      <a href="/contact.html" class="btn btn-primary btn-sm" style="margin-top:8px;background:var(--secondary-container)">Explore OEM Program</a>
+    </div>
+    <div>
+      <h4 style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--on-surface-variant);opacity:0.6;margin:0 0 16px">OEM capabilities</h4>
+      <ul class="program-checklist">
+        <li><span class="material-symbols-outlined">check</span> Full white-label — your brand everywhere</li>
+        <li><span class="material-symbols-outlined">check</span> Custom-branded mobile apps</li>
+        <li><span class="material-symbols-outlined">check</span> Dedicated infrastructure per OEM</li>
+        <li><span class="material-symbols-outlined">check</span> BYOS — data stays in your environment</li>
+        <li><span class="material-symbols-outlined">check</span> BYOAI — plug in your own models</li>
+        <li><span class="material-symbols-outlined">check</span> Multi-location management &amp; reporting</li>
+        <li><span class="material-symbols-outlined">check</span> Custom retention &amp; compliance policies</li>
+        <li><span class="material-symbols-outlined">check</span> SSO / SAML integration</li>
+        <li><span class="material-symbols-outlined">check</span> Dedicated account team &amp; SLA</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- System Integrators -->
+  <div class="program-detail" id="si">
+    <div>
+      <div class="pill" style="background:rgba(255,181,157,0.08);color:var(--tertiary)"><span class="material-symbols-outlined" style="font-size:16px">hub</span> System Integrators</div>
+      <h3>Deploy TruVideo as part of<br>digital transformation projects</h3>
+      <p>For consulting firms, SIs, and digital transformation agencies deploying enterprise solutions. TruVideo's visual intelligence layer fits naturally into fleet digitization, dealership modernization, MRO automation, and field service optimization projects.</p>
+      <p>You bring the industry expertise and client relationships. We bring a production-ready platform that drops into any architecture. One integration covers six verticals — as your client's scope expands, your TruVideo deployment scales with it.</p>
+      <a href="/contact.html" class="btn btn-primary btn-sm" style="margin-top:8px;background:var(--tertiary-container)">Join SI Program</a>
+    </div>
+    <div>
+      <h4 style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--on-surface-variant);opacity:0.6;margin:0 0 16px">SI program includes</h4>
+      <ul class="program-checklist">
+        <li><span class="material-symbols-outlined">check</span> Solution architecture consulting</li>
+        <li><span class="material-symbols-outlined">check</span> Technical training &amp; certification</li>
+        <li><span class="material-symbols-outlined">check</span> Pre-built deployment playbooks</li>
+        <li><span class="material-symbols-outlined">check</span> Demo environment &amp; POC support</li>
+        <li><span class="material-symbols-outlined">check</span> Joint proposal development</li>
+        <li><span class="material-symbols-outlined">check</span> Implementation support engineering</li>
+        <li><span class="material-symbols-outlined">check</span> Referral fees &amp; recurring revenue share</li>
+        <li><span class="material-symbols-outlined">check</span> Co-branded case studies &amp; marketing</li>
+        <li><span class="material-symbols-outlined">check</span> Partner portal &amp; deal registration</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Resellers -->
+  <div class="program-detail" id="reseller">
+    <div>
+      <div class="pill" style="background:rgba(148,204,255,0.08);color:var(--primary)"><span class="material-symbols-outlined" style="font-size:16px">storefront</span> Reseller Partners</div>
+      <h3>Distribute TruVideo to<br>your customer base</h3>
+      <p>For industry consultants, dealer groups, fleet management companies, and regional technology providers. Resell TruVideo as part of your solution bundle and earn recurring revenue on every account.</p>
+      <p>We provide sales training, demo support, co-branded collateral, and a partner portal with deal registration and pipeline tracking. You bring the relationships — we arm you with a product that sells itself once customers see the ROI.</p>
+      <a href="/contact.html" class="btn btn-primary btn-sm" style="margin-top:8px">Apply as Reseller</a>
+    </div>
+    <div>
+      <h4 style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--on-surface-variant);opacity:0.6;margin:0 0 16px">Reseller benefits</h4>
+      <ul class="program-checklist">
+        <li><span class="material-symbols-outlined">check</span> Recurring revenue share</li>
+        <li><span class="material-symbols-outlined">check</span> Sales training &amp; enablement</li>
+        <li><span class="material-symbols-outlined">check</span> Demo environment access</li>
+        <li><span class="material-symbols-outlined">check</span> Co-branded marketing collateral</li>
+        <li><span class="material-symbols-outlined">check</span> Deal registration &amp; protection</li>
+        <li><span class="material-symbols-outlined">check</span> Quarterly business reviews</li>
+        <li><span class="material-symbols-outlined">check</span> Partner advisory board access</li>
+        <li><span class="material-symbols-outlined">check</span> Priority support escalation</li>
+        <li><span class="material-symbols-outlined">check</span> Annual partner summit invitations</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ============ THE PARTNER DIFFERENCE ============ -->
+<section class="section">
+  <div class="section-label">The Difference</div>
+  <h2>Why partners choose TruVideo <span style="color:var(--primary)">over building in-house</span></h2>
+
+  <div class="card-grid card-grid-2" style="margin-top:32px">
+    <div class="card glass">
+      <div class="card-icon"><span class="material-symbols-outlined">block</span></div>
+      <h3>We never compete with you</h3>
+      <p>TruVideo powers your platform — we don't sell around you or build competing products. Unlike vendors who launch their own DMS or fleet management tool, we stay in our lane. Your customer is your customer. Period.</p>
+    </div>
+    <div class="card glass">
+      <div class="card-icon" style="background:rgba(106,215,218,0.1);color:var(--secondary)"><span class="material-symbols-outlined">apps</span></div>
+      <h3>One integration, six verticals</h3>
+      <p>Integrate the SDK once. Deploy to automotive, fleet, aviation, field service, insurance, and construction. As we add verticals and AI models, your integration scales without additional engineering work. Your TAM grows on our roadmap.</p>
+    </div>
+    <div class="card glass">
+      <div class="card-icon" style="background:rgba(255,181,157,0.1);color:var(--tertiary)"><span class="material-symbols-outlined">palette</span></div>
+      <h3>White-label everything</h3>
+      <p>Full UI customization, partner branding, custom domain support, and branded mobile apps. Your customers never see TruVideo — they see your brand, your experience, your value proposition. Not a "powered by" footnote.</p>
+    </div>
+    <div class="card glass">
+      <div class="card-icon"><span class="material-symbols-outlined">database</span></div>
+      <h3>Your data, your control</h3>
+      <p>BYOS architecture means recordings and data can live in your infrastructure. Your retention policies, your compliance framework, your security posture. We never hold your data hostage or mine it for our own models.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ============ VERTICALS OVERVIEW ============ -->
+<section class="section">
+  <div class="section-label">Vertical Coverage</div>
+  <h2>One platform. <span style="color:var(--secondary)">Six industries.</span></h2>
+  <p class="lead">Every partnership gives you access to TruVideo's cross-vertical capabilities. As your customers expand into new industries, your TruVideo integration follows.</p>
+
+  <div class="card-grid card-grid-3" style="margin-top:32px">
+    <div class="card glass">
+      <div class="card-icon"><span class="material-symbols-outlined">directions_car</span></div>
+      <h3>Automotive</h3>
+      <p>Digital vehicle inspections, service walkarounds, sales presentations, and customer communication. DMS integration with CDK, Reynolds, Tekion, DealerSocket.</p>
+    </div>
+    <div class="card glass">
+      <div class="card-icon" style="background:rgba(106,215,218,0.1);color:var(--secondary)"><span class="material-symbols-outlined">local_shipping</span></div>
+      <h3>Fleet &amp; Transportation</h3>
+      <p>Automated DVIRs, pre/post-trip inspections, FMCSA compliance, damage cost recovery. Integration with Fleetio, Samsara, fleet management platforms.</p>
+    </div>
+    <div class="card glass">
+      <div class="card-icon" style="background:rgba(255,181,157,0.1);color:var(--tertiary)"><span class="material-symbols-outlined">flight</span></div>
+      <h3>Aviation &amp; MRO</h3>
+      <p>Aircraft walkaround inspections, damage detection, compliance documentation, AR-powered diagnostics. Qualcomm Snapdragon Spaces integration.</p>
+    </div>
+    <div class="card glass">
+      <div class="card-icon"><span class="material-symbols-outlined">engineering</span></div>
+      <h3>Field Service</h3>
+      <p>Remote visual diagnostics, work completion verification, automated documentation, before/after evidence capture. FSM platform integration.</p>
+    </div>
+    <div class="card glass">
+      <div class="card-icon" style="background:rgba(106,215,218,0.1);color:var(--secondary)"><span class="material-symbols-outlined">shield</span></div>
+      <h3>Insurance</h3>
+      <p>Claims evidence capture, AI damage assessment, fraud detection via temporal attribution, asset history. Claims system integration.</p>
+    </div>
+    <div class="card glass">
+      <div class="card-icon" style="background:rgba(255,181,157,0.1);color:var(--tertiary)"><span class="material-symbols-outlined">construction</span></div>
+      <h3>Construction</h3>
+      <p>Progress documentation, equipment inspection, safety compliance, defect detection, subcontractor verification. Platform integration.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="section cta-banner">
+  <h2>Let's build together.</h2>
+  <p>Add visual intelligence to your platform. Talk to our partnerships team about integration architecture, revenue models, and go-to-market support.</p>
+  <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center">
+    <a href="/contact.html" class="btn btn-primary">Become a Partner</a>
+    <a href="/platform-video-sdk.html" class="btn btn-secondary">Explore the SDK</a>
+  </div>
+</section>
+
+<footer class="site-footer"><div class="footer-inner"><div class="footer-brand"><a href="/" class="nav-logo">Tru<span>Video</span></a><p>The visual intelligence platform that turns video into structured data, automated workflows, and verifiable proof.</p></div><div class="footer-col"><h4>Platform</h4><a href="/platform.html">Overview</a><a href="/platform-video-sdk.html">Video SDK</a><a href="/platform-vqs.html">Video Query Service</a><a href="/platform-messaging.html">Messaging</a><a href="/platform-ai.html">AI &amp; Vision</a></div><div class="footer-col"><h4>Solutions</h4><a href="/solutions-automotive.html">Automotive</a><a href="/solutions-fleet.html">Fleet</a><a href="/solutions-aviation.html">Aviation</a><a href="/solutions-field-service.html">Field Service</a><a href="/solutions-insurance.html">Insurance</a><a href="/solutions-construction.html">Construction</a></div><div class="footer-col"><h4>Company</h4><a href="/about.html">About</a><a href="/team.html">Team</a><a href="/careers.html">Careers</a><a href="/partners.html">Partners</a><a href="/contact.html">Contact</a><a href="/articles.html">Articles</a></div></div><div class="footer-bottom"><span>&copy; 2026 TruVideo, Inc. All rights reserved.</span><span><a href="/privacy.html" style="color:inherit;text-decoration:none;margin-right:16px">Privacy</a><a href="/terms.html" style="color:inherit;text-decoration:none">Terms</a></span></div></footer>
+<script src="/assets/js/nav.js"></script>
+</body>
+</html>

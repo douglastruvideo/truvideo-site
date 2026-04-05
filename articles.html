@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Articles — TruVideo Visual Intelligence Platform</title>
+  <meta name="description" content="Guides, comparisons, and deep dives on visual intelligence, digital vehicle inspection, DVIR compliance, MRO technology, async video, and AI-powered inspection across automotive, fleet, aviation, and engineering.">
+  <meta name="keywords" content="digital vehicle inspection guide, dvir software, loom alternative, mro software, video sdk, visual intelligence, fleet inspection, async video engineering">
+  <link rel="canonical" href="https://truvideo.co/articles">
+  <link rel="icon" href="/assets/img/favicon.png" type="image/png">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+  <style>
+    .filter-bar {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+    .filter-btn {
+      padding: 8px 18px;
+      border-radius: 100px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--on-surface-variant);
+      background: rgba(148,204,255,0.06);
+      border: 1px solid rgba(148,204,255,0.08);
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: inherit;
+    }
+    .filter-btn:hover {
+      background: rgba(148,204,255,0.12);
+      color: var(--on-surface);
+    }
+    .filter-btn.active {
+      background: var(--primary-container);
+      color: var(--on-primary-container);
+      border-color: var(--primary-container);
+    }
+    .filter-group-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--on-surface-variant);
+      opacity: 0.5;
+      display: flex;
+      align-items: center;
+      padding-right: 8px;
+      font-weight: 600;
+    }
+    .filter-divider {
+      width: 1px;
+      height: 28px;
+      background: rgba(148,204,255,0.1);
+      margin: 0 8px;
+      align-self: center;
+    }
+
+    .article-card {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+    .article-card-img {
+      aspect-ratio: 16/9;
+      border-radius: 12px;
+      background: var(--surface-container-high);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border: 1px solid rgba(148,204,255,0.04);
+    }
+    .article-card-img span {
+      font-size: 2.5rem;
+      opacity: 0.25;
+    }
+    .article-card-img.automotive span { color: var(--primary); }
+    .article-card-img.fleet span { color: var(--secondary); }
+    .article-card-img.aviation span { color: var(--tertiary); }
+    .article-card-img.trucast span { color: var(--tertiary); }
+    .article-card-img.platform span { color: var(--primary); }
+    .article-card-img.insurance span { color: var(--secondary); }
+
+    .article-tags {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+    }
+    .article-tag {
+      font-size: 0.65rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 3px 10px;
+      border-radius: 100px;
+      background: rgba(148,204,255,0.06);
+      color: var(--on-surface-variant);
+    }
+    .article-tag.guide { background: rgba(148,204,255,0.1); color: var(--primary); }
+    .article-tag.comparison { background: rgba(106,215,218,0.1); color: var(--secondary); }
+    .article-tag.compliance { background: rgba(255,181,157,0.1); color: var(--tertiary); }
+    .article-tag.thought-leadership { background: rgba(148,204,255,0.06); color: var(--on-surface-variant); }
+
+    .article-meta {
+      font-size: 0.75rem;
+      color: var(--on-surface-variant);
+      opacity: 0.6;
+      margin-bottom: 8px;
+    }
+    .article-card h3 {
+      font-size: 1.1rem;
+      margin: 0 0 8px;
+      line-height: 1.4;
+      letter-spacing: -0.01em;
+    }
+    .article-card p {
+      font-size: 0.85rem;
+      color: var(--on-surface-variant);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .article-card.hidden { display: none; }
+
+    .no-results {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 80px 24px;
+      color: var(--on-surface-variant);
+    }
+    .no-results p { font-size: 1rem; }
+
+    .featured-article {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+      margin-bottom: 64px;
+      padding: 40px;
+      border-radius: 20px;
+      background: rgba(20,55,84,0.3);
+      border: 1px solid rgba(148,204,255,0.06);
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.2s;
+    }
+    .featured-article:hover { border-color: rgba(148,204,255,0.15); }
+    .featured-article-img {
+      aspect-ratio: 16/9;
+      border-radius: 12px;
+      background: var(--surface-container-high);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(148,204,255,0.04);
+    }
+    .featured-article-img span { font-size: 3rem; color: var(--primary); opacity: 0.25; }
+    .featured-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--primary);
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .featured-article h2 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      margin: 0 0 12px;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+    }
+    .featured-article p {
+      font-size: 0.95rem;
+      color: var(--on-surface-variant);
+      line-height: 1.7;
+      margin: 0;
+    }
+    @media (max-width: 768px) {
+      .featured-article { grid-template-columns: 1fr; gap: 24px; padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+<div class="mesh-bg"></div>
+<nav class="site-nav"><div class="nav-inner"><a href="/" class="nav-logo">Tru<span>Video</span></a><button class="nav-toggle" aria-label="Menu">&#9776;</button><ul class="nav-links"><li class="nav-dropdown"><a href="/platform.html" class="nav-dropdown-trigger">Platform</a><div class="nav-dropdown-menu"><div class="dd-label">Capabilities</div><a href="/platform.html">Platform Overview</a><a href="/platform-video-sdk.html">Video SDK</a><a href="/platform-vqs.html">Video Query Service</a><a href="/platform-messaging.html">Intelligent Messaging</a><a href="/platform-ai.html">AI &amp; Computer Vision</a></div></li><li class="nav-dropdown"><a href="/solutions-automotive.html" class="nav-dropdown-trigger">Solutions</a><div class="nav-dropdown-menu"><div class="dd-label">Industries</div><a href="/solutions-automotive.html">Automotive</a><a href="/solutions-fleet.html">Fleet &amp; Transportation</a><a href="/solutions-aviation.html">Aviation &amp; MRO</a><a href="/solutions-field-service.html">Field Service</a><a href="/solutions-insurance.html">Insurance</a><a href="/solutions-construction.html">Construction</a></div></li><li><a href="/trucast.html">TruCast</a></li><li><a href="/partners.html">Partners</a></li><li><a href="/about.html">Company</a></li><li><a href="/articles.html" style="color:var(--primary)">Articles</a></li><li><a href="/contact.html" class="nav-cta">Get a Demo</a></li></ul></div></nav>
+
+<section class="hero hero-sm">
+  <div class="pill"><span class="material-symbols-outlined" style="font-size:16px">article</span> Articles</div>
+  <h1 class="fade-up">Guides, comparisons &amp; <span class="accent">deep dives</span></h1>
+  <p class="subtitle fade-up fade-up-d1">Practical content for operators, engineers, and decision-makers building with visual intelligence across automotive, fleet, aviation, and beyond.</p>
+</section>
+
+<section class="section" style="padding-top:0">
+
+  <!-- FILTER BAR -->
+  <div class="filter-bar" id="filterBar">
+    <span class="filter-group-label">Type</span>
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="guide">Guides</button>
+    <button class="filter-btn" data-filter="comparison">Comparisons</button>
+    <button class="filter-btn" data-filter="compliance">Compliance</button>
+    <button class="filter-btn" data-filter="thought-leadership">Thought Leadership</button>
+    <div class="filter-divider"></div>
+    <span class="filter-group-label">Industry</span>
+    <button class="filter-btn" data-filter="automotive">Automotive</button>
+    <button class="filter-btn" data-filter="fleet">Fleet</button>
+    <button class="filter-btn" data-filter="aviation">Aviation</button>
+    <button class="filter-btn" data-filter="trucast">TruCast</button>
+    <button class="filter-btn" data-filter="platform">Platform</button>
+  </div>
+
+  <!-- FEATURED ARTICLE -->
+  <a href="/articles/digital-vehicle-inspection-guide.html" class="featured-article article-filterable" data-categories="guide automotive">
+    <div class="featured-article-img">
+      <span class="material-symbols-outlined">directions_car</span>
+    </div>
+    <div>
+      <div class="featured-label">Featured Guide</div>
+      <h2>The Complete Guide to Digital Vehicle Inspections</h2>
+      <p>Everything dealership operators need to know about implementing video-based DVI — ROI benchmarks, workflow design, DMS integration, competitive landscape, and customer communication best practices.</p>
+      <div class="article-tags" style="margin-top:16px">
+        <span class="article-tag guide">Guide</span>
+        <span class="article-tag">Automotive</span>
+      </div>
+    </div>
+  </a>
+
+  <!-- ARTICLE GRID -->
+  <div class="card-grid card-grid-3" id="articleGrid">
+
+    <a href="/articles/what-is-a-dvir.html" class="card glass article-card article-filterable" data-categories="guide compliance fleet">
+      <div class="article-card-img fleet"><span class="material-symbols-outlined">assignment</span></div>
+      <div class="article-tags">
+        <span class="article-tag guide">Guide</span>
+        <span class="article-tag compliance">Compliance</span>
+        <span class="article-tag">Fleet</span>
+      </div>
+      <p class="article-meta">April 2026 &middot; 12 min read</p>
+      <h3>What Is a DVIR? The Complete Guide to Driver Vehicle Inspection Reports</h3>
+      <p>Everything fleet operators and drivers need to know about DVIRs — from FMCSA requirements to electronic solutions that cut inspection time by 80%.</p>
+    </a>
+
+    <a href="/articles/pre-trip-inspection-checklist.html" class="card glass article-card article-filterable" data-categories="guide compliance fleet">
+      <div class="article-card-img fleet"><span class="material-symbols-outlined">checklist</span></div>
+      <div class="article-tags">
+        <span class="article-tag guide">Guide</span>
+        <span class="article-tag compliance">Compliance</span>
+        <span class="article-tag">Fleet</span>
+      </div>
+      <p class="article-meta">April 2026 &middot; 10 min read</p>
+      <h3>Pre-Trip Inspection Checklist: Everything Drivers and Fleets Need to Know</h3>
+      <p>The definitive pre-trip and post-trip inspection checklist. What FMCSA requires, what best-in-class fleets add, and how video documentation changes the game.</p>
+    </a>
+
+    <a href="/articles/best-loom-alternatives.html" class="card glass article-card article-filterable" data-categories="comparison trucast">
+      <div class="article-card-img trucast"><span class="material-symbols-outlined">cast</span></div>
+      <div class="article-tags">
+        <span class="article-tag comparison">Comparison</span>
+        <span class="article-tag">TruCast</span>
+      </div>
+      <p class="article-meta">April 2026 &middot; 9 min read</p>
+      <h3>Best Loom Alternatives for Engineering Teams in 2026</h3>
+      <p>Loom is built for sales and marketing. If you're an engineering team that cares about data sovereignty, dev-tool integration, and BYOS — here are the real alternatives.</p>
+    </a>
+
+    <a href="/articles/multipoint-inspection-guide.html" class="card glass article-card article-filterable" data-categories="guide automotive">
+      <div class="article-card-img automotive"><span class="material-symbols-outlined">car_repair</span></div>
+      <div class="article-tags">
+        <span class="article-tag guide">Guide</span>
+        <span class="article-tag">Automotive</span>
+      </div>
+      <p class="article-meta">March 2026 &middot; 8 min read</p>
+      <h3>Multipoint Inspection: What It Is, Why It Matters, and How Video Changes the Game</h3>
+      <p>The multipoint inspection is the highest-leverage touchpoint in the service lane. Here's how video transforms it from a checkbox into a revenue engine.</p>
+    </a>
+
+    <a href="/articles/fmcsa-dvir-requirements.html" class="card glass article-card article-filterable" data-categories="compliance fleet">
+      <div class="article-card-img fleet"><span class="material-symbols-outlined">gavel</span></div>
+      <div class="article-tags">
+        <span class="article-tag compliance">Compliance</span>
+        <span class="article-tag">Fleet</span>
+      </div>
+      <p class="article-meta">March 2026 &middot; 11 min read</p>
+      <h3>FMCSA DVIR Requirements: What Fleet Operators Need to Know</h3>
+      <p>FMCSA §396.11 and §396.13 decoded. What's actually required, what triggers violations, and how electronic DVIR with video evidence keeps you compliant.</p>
+    </a>
+
+    <a href="/articles/video-sdk-comparison.html" class="card glass article-card article-filterable" data-categories="comparison platform">
+      <div class="article-card-img platform"><span class="material-symbols-outlined">code</span></div>
+      <div class="article-tags">
+        <span class="article-tag comparison">Comparison</span>
+        <span class="article-tag">Platform</span>
+      </div>
+      <p class="article-meta">March 2026 &middot; 10 min read</p>
+      <h3>Video SDK Comparison: How to Choose the Right Video Infrastructure</h3>
+      <p>Evaluating video SDKs for your platform? This comparison covers capture quality, AI pipelines, storage architecture, and the build-vs-buy decision framework.</p>
+    </a>
+
+    <a href="/articles/ai-damage-detection-vs-manual-inspection.html" class="card glass article-card article-filterable" data-categories="guide platform automotive insurance">
+      <div class="article-card-img platform"><span class="material-symbols-outlined">image_search</span></div>
+      <div class="article-tags">
+        <span class="article-tag guide">Guide</span>
+        <span class="article-tag">Platform</span>
+        <span class="article-tag">Automotive</span>
+      </div>
+      <p class="article-meta">February 2026 &middot; 9 min read</p>
+      <h3>How AI Damage Detection Is Replacing Manual Vehicle Inspections</h3>
+      <p>AI models now detect dents, scratches, and hail damage with higher accuracy than human inspectors. Here's how it works, where it falls short, and what temporal attribution changes.</p>
+    </a>
+
+    <a href="/articles/async-video-engineering-teams.html" class="card glass article-card article-filterable" data-categories="guide trucast">
+      <div class="article-card-img trucast"><span class="material-symbols-outlined">screen_record</span></div>
+      <div class="article-tags">
+        <span class="article-tag guide">Guide</span>
+        <span class="article-tag">TruCast</span>
+      </div>
+      <p class="article-meta">February 2026 &middot; 7 min read</p>
+      <h3>Async Video for Engineering Teams: Why the Best Teams Record Instead of Meet</h3>
+      <p>Code reviews, architecture walkthroughs, sprint demos, bug reports — all better as async video than synchronous meetings. Here's the playbook for making the shift.</p>
+    </a>
+
+    <a href="/articles/mro-software-aviation-maintenance.html" class="card glass article-card article-filterable" data-categories="guide aviation">
+      <div class="article-card-img aviation"><span class="material-symbols-outlined">flight</span></div>
+      <div class="article-tags">
+        <span class="article-tag guide">Guide</span>
+        <span class="article-tag">Aviation</span>
+      </div>
+      <p class="article-meta">February 2026 &middot; 11 min read</p>
+      <h3>MRO Software and Aviation Maintenance Technology: The Visual Intelligence Shift</h3>
+      <p>Aircraft maintenance is a $90B+ market still reliant on manual walkarounds and paper forms. How visual intelligence is transforming MRO operations.</p>
+    </a>
+
+    <a href="/articles/increase-repair-order-revenue-video.html" class="card glass article-card article-filterable" data-categories="guide automotive">
+      <div class="article-card-img automotive"><span class="material-symbols-outlined">trending_up</span></div>
+      <div class="article-tags">
+        <span class="article-tag guide">Guide</span>
+        <span class="article-tag">Automotive</span>
+      </div>
+      <p class="article-meta">January 2026 &middot; 8 min read</p>
+      <h3>How to Increase Repair Order Revenue with Video Walkarounds</h3>
+      <p>Service advisors using video walkarounds see 30%+ lifts in repair order revenue. Here's the playbook — from recording technique to customer approval workflows.</p>
+    </a>
+
+    <a href="/articles/electronic-dvir-guide.html" class="card glass article-card article-filterable" data-categories="guide compliance fleet">
+      <div class="article-card-img fleet"><span class="material-symbols-outlined">tablet_android</span></div>
+      <div class="article-tags">
+        <span class="article-tag guide">Guide</span>
+        <span class="article-tag compliance">Compliance</span>
+        <span class="article-tag">Fleet</span>
+      </div>
+      <p class="article-meta">January 2026 &middot; 9 min read</p>
+      <h3>Electronic DVIR: Why Paper Inspections Are Costing Your Fleet Money and Compliance</h3>
+      <p>Paper DVIRs fail audits, miss defects, and waste driver time. Electronic DVIR with video evidence solves all three — here's the business case and implementation guide.</p>
+    </a>
+
+    <a href="/articles/byos-architecture.html" class="card glass article-card article-filterable" data-categories="thought-leadership platform">
+      <div class="article-card-img platform"><span class="material-symbols-outlined">cloud_done</span></div>
+      <div class="article-tags">
+        <span class="article-tag thought-leadership">Thought Leadership</span>
+        <span class="article-tag">Platform</span>
+      </div>
+      <p class="article-meta">January 2026 &middot; 8 min read</p>
+      <h3>BYOS Architecture: Why Your Video Recordings Should Live in Your Infrastructure</h3>
+      <p>The case for Bring Your Own Storage — why data sovereignty matters for video, how BYOS works technically, and why enterprises are demanding it.</p>
+    </a>
+
+    <a href="/articles/why-visual-intelligence-not-video.html" class="card glass article-card article-filterable" data-categories="thought-leadership platform">
+      <div class="article-card-img platform"><span class="material-symbols-outlined">visibility</span></div>
+      <div class="article-tags">
+        <span class="article-tag thought-leadership">Thought Leadership</span>
+        <span class="article-tag">Platform</span>
+      </div>
+      <p class="article-meta">January 2026 &middot; 6 min read</p>
+      <h3>Why We Say "Visual Intelligence" — Not "Video"</h3>
+      <p>The language shift from video to visual intelligence isn't marketing — it's a platform thesis. Here's why it matters for enterprise buyers and what it signals about where the market is heading.</p>
+    </a>
+
+  </div>
+
+  <div class="no-results" id="noResults" style="display:none">
+    <span class="material-symbols-outlined" style="font-size:3rem;opacity:0.2;margin-bottom:16px">filter_list_off</span>
+    <p>No articles match that filter. Try a different category.</p>
+  </div>
+</section>
+
+<section class="section cta-banner">
+  <h2>Stay in the loop</h2>
+  <p>Get visual intelligence insights, product updates, and industry analysis delivered to your inbox.</p>
+  <a href="/contact.html" class="btn btn-primary">Subscribe</a>
+</section>
+
+<footer class="site-footer"><div class="footer-inner"><div class="footer-brand"><a href="/" class="nav-logo">Tru<span>Video</span></a><p>The visual intelligence platform that turns video into structured data, automated workflows, and verifiable proof.</p></div><div class="footer-col"><h4>Platform</h4><a href="/platform.html">Overview</a><a href="/platform-video-sdk.html">Video SDK</a><a href="/platform-vqs.html">Video Query Service</a><a href="/platform-messaging.html">Messaging</a><a href="/platform-ai.html">AI &amp; Vision</a></div><div class="footer-col"><h4>Solutions</h4><a href="/solutions-automotive.html">Automotive</a><a href="/solutions-fleet.html">Fleet</a><a href="/solutions-aviation.html">Aviation</a><a href="/solutions-field-service.html">Field Service</a><a href="/solutions-insurance.html">Insurance</a><a href="/solutions-construction.html">Construction</a></div><div class="footer-col"><h4>Company</h4><a href="/about.html">About</a><a href="/team.html">Team</a><a href="/careers.html">Careers</a><a href="/partners.html">Partners</a><a href="/contact.html">Contact</a><a href="/articles.html">Articles</a></div></div><div class="footer-bottom"><span>&copy; 2026 TruVideo, Inc. All rights reserved.</span><span><a href="/privacy.html" style="color:inherit;text-decoration:none;margin-right:16px">Privacy</a><a href="/terms.html" style="color:inherit;text-decoration:none">Terms</a></span></div></footer>
+<script src="/assets/js/nav.js"></script>
+<script>
+(function() {
+  const filterBar = document.getElementById('filterBar');
+  const grid = document.getElementById('articleGrid');
+  const featured = document.querySelector('.featured-article');
+  const noResults = document.getElementById('noResults');
+  const buttons = filterBar.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.article-filterable');
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      let visible = 0;
+      cards.forEach(card => {
+        if (filter === 'all' || card.dataset.categories.split(' ').includes(filter)) {
+          card.classList.remove('hidden');
+          card.style.display = '';
+          visible++;
+        } else {
+          card.classList.add('hidden');
+          card.style.display = 'none';
+        }
+      });
+      noResults.style.display = visible === 0 ? 'block' : 'none';
+    });
+  });
+})();
+</script>
+</body>
+</html>

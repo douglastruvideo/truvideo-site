@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TruCast — Async Video for Engineering Teams | Loom Alternative with Data Sovereignty</title>
+  <meta name="description" content="TruCast is the async screen recording tool built for engineering teams. BYOS architecture means recordings live in YOUR infrastructure. AI summaries, Jira integration, timestamped comments. A Loom alternative that respects your data sovereignty.">
+  <meta name="keywords" content="loom alternative, screen recorder for teams, async video tool, screen recording software, engineering communication tool, BYOS screen recorder, loom competitor, async video engineering, screen recording data sovereignty">
+  <link rel="canonical" href="https://truvideo.co/trucast">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <link rel="icon" href="/assets/img/favicon.png" type="image/png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+  <style>
+    .tc-accent { color: var(--tertiary); }
+    .tc-pill { background: rgba(255,181,157,0.1); color: var(--tertiary); }
+    .tc-icon { background: rgba(255,181,157,0.1); color: var(--tertiary); }
+    .tc-btn { background: var(--tertiary-container); }
+    .tc-btn:hover { background: #e04e15; transform: translateY(-1px); }
+    .tc-border { border-color: rgba(255,181,157,0.25) !important; }
+    .tc-glow { box-shadow: 0 0 80px rgba(200,68,13,0.08); }
+
+    /* TruCast-specific components */
+    .tc-hero-visual {
+      position: relative;
+      margin-top: 64px;
+      max-width: 960px;
+    }
+    .tc-hero-visual .mock-browser {
+      background: var(--surface-container);
+      border: 1px solid rgba(148,204,255,0.08);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    .mock-browser-bar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 16px;
+      background: var(--surface-container-lowest);
+      border-bottom: 1px solid rgba(148,204,255,0.06);
+    }
+    .mock-dot {
+      width: 10px; height: 10px; border-radius: 50%;
+      background: rgba(148,204,255,0.15);
+    }
+    .mock-browser-content {
+      padding: 32px;
+      min-height: 280px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+    }
+    .mock-video-area {
+      flex: 1;
+      aspect-ratio: 16/9;
+      background: var(--surface-container-high);
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(148,204,255,0.06);
+      position: relative;
+      overflow: hidden;
+    }
+    .mock-play {
+      width: 64px; height: 64px; border-radius: 50%;
+      background: var(--tertiary-container);
+      display: flex; align-items: center; justify-content: center;
+      color: white; font-size: 1.5rem;
+    }
+    .mock-sidebar {
+      width: 240px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .mock-chapter {
+      padding: 12px;
+      border-radius: 8px;
+      background: rgba(148,204,255,0.04);
+      border: 1px solid rgba(148,204,255,0.06);
+    }
+    .mock-chapter-time {
+      font-size: 0.7rem;
+      color: var(--tertiary);
+      font-weight: 600;
+      font-family: monospace;
+    }
+    .mock-chapter-title {
+      font-size: 0.8rem;
+      color: var(--on-surface);
+      margin-top: 4px;
+    }
+    @media (max-width: 768px) {
+      .mock-browser-content { flex-direction: column; padding: 16px; }
+      .mock-sidebar { width: 100%; flex-direction: row; overflow-x: auto; }
+      .mock-chapter { min-width: 160px; }
+    }
+
+    .tc-step-number {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: rgba(255,181,157,0.1);
+      color: var(--tertiary);
+      font-weight: 800; font-size: 1.1rem;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .tc-step-row {
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+      padding: 24px 0;
+    }
+    .tc-step-row + .tc-step-row {
+      border-top: 1px solid rgba(148,204,255,0.04);
+    }
+
+    .tc-usecase-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+      margin-top: 40px;
+    }
+    .tc-usecase {
+      padding: 24px;
+      border-radius: 12px;
+      background: rgba(20,55,84,0.35);
+      border: 1px solid rgba(148,204,255,0.05);
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .tc-usecase:hover {
+      border-color: rgba(255,181,157,0.15);
+      transform: translateY(-2px);
+    }
+    .tc-usecase h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin: 0 0 8px;
+      color: var(--on-surface);
+    }
+    .tc-usecase p {
+      font-size: 0.85rem;
+      color: var(--on-surface-variant);
+      margin: 0;
+      line-height: 1.55;
+    }
+    .tc-usecase-icon {
+      font-size: 1.2rem;
+      color: var(--tertiary);
+      margin-bottom: 12px;
+    }
+
+    .tc-integration-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 32px;
+    }
+    .tc-integration-chip {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 20px;
+      border-radius: 12px;
+      background: rgba(20,55,84,0.4);
+      border: 1px solid rgba(148,204,255,0.06);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--on-surface);
+      transition: border-color 0.2s;
+    }
+    .tc-integration-chip:hover {
+      border-color: rgba(255,181,157,0.2);
+    }
+    .tc-integration-chip .material-symbols-outlined {
+      font-size: 1.2rem;
+      color: var(--tertiary);
+    }
+
+    .tc-security-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+    .tc-security-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .tc-security-item .material-symbols-outlined {
+      color: var(--secondary);
+      font-size: 1.3rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .tc-security-item h4 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin: 0 0 4px;
+      color: var(--on-surface);
+    }
+    .tc-security-item p {
+      font-size: 0.8rem;
+      color: var(--on-surface-variant);
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    .tc-faq { max-width: 720px; }
+    .tc-faq-item {
+      border-bottom: 1px solid rgba(148,204,255,0.06);
+      padding: 24px 0;
+    }
+    .tc-faq-item summary {
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--on-surface);
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .tc-faq-item summary::-webkit-details-marker { display: none; }
+    .tc-faq-item summary::after {
+      content: '+';
+      font-size: 1.4rem;
+      color: var(--tertiary);
+      font-weight: 300;
+      transition: transform 0.2s;
+    }
+    .tc-faq-item[open] summary::after {
+      transform: rotate(45deg);
+    }
+    .tc-faq-item .faq-body {
+      padding-top: 12px;
+      font-size: 0.9rem;
+      color: var(--on-surface-variant);
+      line-height: 1.7;
+    }
+
+    .tc-quote-block {
+      padding: 40px;
+      border-left: 3px solid var(--tertiary);
+      margin: 48px 0;
+      background: rgba(255,181,157,0.03);
+      border-radius: 0 16px 16px 0;
+    }
+    .tc-quote-block blockquote {
+      font-size: 1.15rem;
+      font-style: italic;
+      color: var(--on-surface);
+      line-height: 1.7;
+      margin: 0 0 16px;
+    }
+    .tc-quote-block cite {
+      font-size: 0.85rem;
+      color: var(--on-surface-variant);
+      font-style: normal;
+    }
+  </style>
+</head>
+<body>
+<div class="mesh-bg"></div>
+<nav class="site-nav"><div class="nav-inner"><a href="/" class="nav-logo">Tru<span>Video</span></a><button class="nav-toggle" aria-label="Menu">&#9776;</button><ul class="nav-links"><li class="nav-dropdown"><a href="/platform.html" class="nav-dropdown-trigger">Platform</a><div class="nav-dropdown-menu"><div class="dd-label">Capabilities</div><a href="/platform.html">Platform Overview</a><a href="/platform-video-sdk.html">Video SDK</a><a href="/platform-vqs.html">Video Query Service</a><a href="/platform-messaging.html">Intelligent Messaging</a><a href="/platform-ai.html">AI &amp; Computer Vision</a></div></li><li class="nav-dropdown"><a href="/solutions-automotive.html" class="nav-dropdown-trigger">Solutions</a><div class="nav-dropdown-menu"><div class="dd-label">Industries</div><a href="/solutions-automotive.html">Automotive</a><a href="/solutions-fleet.html">Fleet &amp; Transportation</a><a href="/solutions-aviation.html">Aviation &amp; MRO</a><a href="/solutions-field-service.html">Field Service</a><a href="/solutions-insurance.html">Insurance</a><a href="/solutions-construction.html">Construction</a></div></li><li><a href="/trucast.html" style="color:var(--tertiary)">TruCast</a></li><li><a href="/partners.html">Partners</a></li><li><a href="/about.html">Company</a></li><li><a href="/articles.html">Articles</a></li><li><a href="/contact.html" class="nav-cta">Get a Demo</a></li></ul></div></nav>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="pill tc-pill">
+    <span class="material-symbols-outlined" style="font-size:16px">cast</span>
+    By TruVideo
+  </div>
+  <h1 class="fade-up" style="font-size:clamp(3rem,6vw,4.5rem)">
+    Stop scheduling meetings.<br>Start <span class="tc-accent">casting context.</span>
+  </h1>
+  <p class="subtitle fade-up fade-up-d1" style="margin-top:0">TruCast is async screen recording for engineering teams. Record your screen, narrate the context, share a link — and your recordings live in <strong style="color:var(--on-surface)">your</strong> infrastructure, not ours.</p>
+  <div style="display:flex;gap:12px;flex-wrap:wrap" class="fade-up fade-up-d2">
+    <a href="/contact.html" class="btn btn-primary tc-btn">Get Early Access</a>
+    <a href="#how-it-works" class="btn btn-secondary">See How It Works</a>
+  </div>
+
+  <!-- Mock product visual -->
+  <div class="tc-hero-visual fade-up fade-up-d3">
+    <div class="mock-browser tc-glow">
+      <div class="mock-browser-bar">
+        <div class="mock-dot"></div><div class="mock-dot"></div><div class="mock-dot"></div>
+        <span style="margin-left:8px;font-size:0.75rem;color:var(--on-surface-variant);opacity:0.5">trucast.app/recording/fix-auth-race-condition</span>
+      </div>
+      <div class="mock-browser-content">
+        <div class="mock-video-area">
+          <div class="mock-play"><span class="material-symbols-outlined">play_arrow</span></div>
+          <div style="position:absolute;bottom:0;left:0;right:0;padding:16px 20px;background:linear-gradient(transparent,rgba(0,0,0,0.7));display:flex;align-items:center;justify-content:space-between">
+            <span style="font-size:0.75rem;color:white;opacity:0.8">Fix auth race condition — Marcus Chen</span>
+            <span style="font-size:0.7rem;color:white;opacity:0.5;font-family:monospace">4:32</span>
+          </div>
+        </div>
+        <div class="mock-sidebar">
+          <div style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--on-surface-variant);opacity:0.5;font-weight:600">AI Chapters</div>
+          <div class="mock-chapter">
+            <div class="mock-chapter-time">0:00</div>
+            <div class="mock-chapter-title">Problem: Token refresh race</div>
+          </div>
+          <div class="mock-chapter" style="border-color:rgba(255,181,157,0.15)">
+            <div class="mock-chapter-time">1:24</div>
+            <div class="mock-chapter-title">Root cause in useAuth hook</div>
+          </div>
+          <div class="mock-chapter">
+            <div class="mock-chapter-time">2:58</div>
+            <div class="mock-chapter-title">Fix: Mutex + retry queue</div>
+          </div>
+          <div class="mock-chapter">
+            <div class="mock-chapter-time">4:05</div>
+            <div class="mock-chapter-title">Test coverage added</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ THE PROBLEM ============ -->
+<section class="section">
+  <div class="section-label" style="color:var(--tertiary)">The Problem</div>
+  <h2>Your team loses 15+ hours/week<br>to meetings that should be <span class="tc-accent">async.</span></h2>
+  <p class="lead">Code reviews. Bug reports. Architecture walkthroughs. Sprint demos. Onboarding. They're all better as recorded context than scheduled synchronous interruptions that fragment everyone's flow state.</p>
+  <p class="lead" style="margin-top:16px">And when you do use a screen recorder, it probably stores your proprietary code walkthroughs on someone else's servers. That's a security team's nightmare.</p>
+</section>
+
+<hr class="divider">
+
+<!-- ============ HOW IT WORKS ============ -->
+<section class="section" id="how-it-works">
+  <div class="section-label" style="color:var(--tertiary)">How It Works</div>
+  <h2>Three steps. <span class="tc-accent">Zero meetings.</span></h2>
+
+  <div style="max-width:680px;margin-top:48px">
+    <div class="tc-step-row">
+      <div class="tc-step-number">1</div>
+      <div>
+        <h3 style="margin:0 0 8px;font-size:1.1rem">Record</h3>
+        <p style="color:var(--on-surface-variant);font-size:0.9rem;margin:0;line-height:1.7">One click from the browser extension or desktop app. Screen, camera, or both. Draw, annotate, and highlight as you narrate. No "can you see my screen?" — just hit record.</p>
+      </div>
+    </div>
+    <div class="tc-step-row">
+      <div class="tc-step-number">2</div>
+      <div>
+        <h3 style="margin:0 0 8px;font-size:1.1rem">AI processes it instantly</h3>
+        <p style="color:var(--on-surface-variant);font-size:0.9rem;margin:0;line-height:1.7">VQS generates a full transcript, summary, and chapter markers the moment you stop recording. Recipients jump straight to the 30-second segment that matters — no scrubbing through 20 minutes for 2 minutes of context.</p>
+      </div>
+    </div>
+    <div class="tc-step-row">
+      <div class="tc-step-number">3</div>
+      <div>
+        <h3 style="margin:0 0 8px;font-size:1.1rem">Share a link</h3>
+        <p style="color:var(--on-surface-variant);font-size:0.9rem;margin:0;line-height:1.7">Paste the link in Slack, attach it to a Jira ticket, or embed it in Confluence. Viewers comment on specific timestamps. The async conversation happens when people have time — not when Calendly says so.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ============ USE CASES ============ -->
+<section class="section" id="use-cases">
+  <div class="section-label" style="color:var(--tertiary)">Use Cases</div>
+  <h2>Built for how engineering teams <span class="tc-accent">actually communicate</span></h2>
+
+  <div class="tc-usecase-grid">
+    <div class="tc-usecase">
+      <div class="tc-usecase-icon"><span class="material-symbols-outlined">code</span></div>
+      <h4>Code Reviews</h4>
+      <p>Walk through your PR with voice + screen instead of writing a novel in GitHub comments. Reviewers understand intent, not just diff lines. Attach directly to the PR.</p>
+    </div>
+    <div class="tc-usecase">
+      <div class="tc-usecase-icon"><span class="material-symbols-outlined">bug_report</span></div>
+      <h4>Bug Reports</h4>
+      <p>Show the bug, show the repro steps, show the network tab. One recording replaces a 12-message Slack thread of "what did you click?" and "can you send a screenshot?"</p>
+    </div>
+    <div class="tc-usecase">
+      <div class="tc-usecase-icon"><span class="material-symbols-outlined">architecture</span></div>
+      <h4>Architecture Walkthroughs</h4>
+      <p>Explain the system design once. New team members watch it when they need it. The context lives forever instead of dying in a meeting room.</p>
+    </div>
+    <div class="tc-usecase">
+      <div class="tc-usecase-icon"><span class="material-symbols-outlined">sprint</span></div>
+      <h4>Sprint Demos</h4>
+      <p>Record a 3-minute demo, post it in the channel. Stakeholders watch at 2x on their own time. No more herding 15 people into a 30-minute meeting to see a button move.</p>
+    </div>
+    <div class="tc-usecase">
+      <div class="tc-usecase-icon"><span class="material-symbols-outlined">school</span></div>
+      <h4>Onboarding</h4>
+      <p>Build a library of recorded context: how the deploy pipeline works, where the bodies are buried in the monolith, why that service has three config files. Scales to every new hire.</p>
+    </div>
+    <div class="tc-usecase">
+      <div class="tc-usecase-icon"><span class="material-symbols-outlined">support_agent</span></div>
+      <h4>Incident Postmortems</h4>
+      <p>Record the timeline, the dashboards, the root cause. A 5-minute TruCast replaces a 45-minute meeting and a doc nobody reads. Timestamped comments become the action items.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ============ FEATURES ============ -->
+<section class="section" id="features">
+  <div class="section-label" style="color:var(--tertiary)">Features</div>
+  <h2>Everything you need. <span class="tc-accent">Nothing you don't.</span></h2>
+
+  <div class="card-grid card-grid-3">
+    <div class="card glass">
+      <div class="card-icon tc-icon"><span class="material-symbols-outlined">screen_record</span></div>
+      <h3>One-Click Recording</h3>
+      <p>Screen, camera, or both. Browser extension or desktop app. Tab audio capture. Drawing tools and annotations built in. No setup friction — if you can click a button, you can record.</p>
+    </div>
+    <div class="card glass">
+      <div class="card-icon tc-icon"><span class="material-symbols-outlined">smart_toy</span></div>
+      <h3>AI Summaries &amp; Chapters</h3>
+      <p>VQS generates transcripts, summaries, and navigable chapter markers the moment recording stops. Search across all your team's recordings by keyword. Never lose context again.</p>
+    </div>
+    <div class="card glass">
+      <div class="card-icon tc-icon"><span class="material-symbols-outlined">comment</span></div>
+      <h3>Timestamped Comments</h3>
+      <p>Comment on specific moments in any recording. Threaded discussions tied to exact timestamps — like inline code review comments, but for video walkthroughs.</p>
+    </div>
+    <div class="card glass">
+      <div class="card-icon tc-icon"><span class="material-symbols-outlined">cloud_done</span></div>
+      <h3>BYOS — Your Storage</h3>
+      <p>Recordings live in your AWS S3, Azure Blob, or GCP Cloud Storage bucket. Not on our servers. Your data, your infrastructure, your retention policies. Full data sovereignty.</p>
+    </div>
+    <div class="card glass">
+      <div class="card-icon tc-icon"><span class="material-symbols-outlined">speed</span></div>
+      <h3>Instant Sharing</h3>
+      <p>Recording done, link generated. No upload wait — adaptive streaming means playback starts immediately. Viewers get the AI summary before the video even loads.</p>
+    </div>
+    <div class="card glass">
+      <div class="card-icon tc-icon"><span class="material-symbols-outlined">edit</span></div>
+      <h3>Quick Trim &amp; Stitch</h3>
+      <p>Trim the "uh, let me find that file" off the beginning. Stitch two recordings together. Basic editing that engineers actually need — nothing bloated.</p>
+    </div>
+    <div class="card glass">
+      <div class="card-icon tc-icon"><span class="material-symbols-outlined">visibility</span></div>
+      <h3>View Analytics</h3>
+      <p>See who watched, how far they got, and where they dropped off. Know if your architecture walkthrough actually got absorbed or just got a thumbs-up emoji.</p>
+    </div>
+    <div class="card glass">
+      <div class="card-icon tc-icon"><span class="material-symbols-outlined">password</span></div>
+      <h3>Access Controls</h3>
+      <p>Team-only, link-only, or password-protected. Set expiration dates on recordings. SSO/SAML integration for enterprise. Recordings with proprietary code stay locked down.</p>
+    </div>
+    <div class="card glass">
+      <div class="card-icon tc-icon"><span class="material-symbols-outlined">translate</span></div>
+      <h3>Multi-Language Transcripts</h3>
+      <p>AI transcripts in 30+ languages. Your distributed team in Bangalore watches a recording from Austin with auto-translated captions. Context crosses every timezone.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ============ INTEGRATIONS ============ -->
+<section class="section" id="integrations">
+  <div class="section-label" style="color:var(--tertiary)">Integrations</div>
+  <h2>Lives where <span class="tc-accent">your team already works</span></h2>
+  <p class="lead">TruCast plugs into the tools you already use. No context switching. The video lives with the work.</p>
+
+  <div class="tc-integration-bar">
+    <div class="tc-integration-chip">
+      <span class="material-symbols-outlined">integration_instructions</span> Jira
+    </div>
+    <div class="tc-integration-chip">
+      <span class="material-symbols-outlined">tag</span> Slack
+    </div>
+    <div class="tc-integration-chip">
+      <span class="material-symbols-outlined">code</span> GitHub
+    </div>
+    <div class="tc-integration-chip">
+      <span class="material-symbols-outlined">linear_scale</span> Linear
+    </div>
+    <div class="tc-integration-chip">
+      <span class="material-symbols-outlined">article</span> Confluence
+    </div>
+    <div class="tc-integration-chip">
+      <span class="material-symbols-outlined">edit_note</span> Notion
+    </div>
+    <div class="tc-integration-chip">
+      <span class="material-symbols-outlined">chat</span> Microsoft Teams
+    </div>
+    <div class="tc-integration-chip">
+      <span class="material-symbols-outlined">webhook</span> Webhooks &amp; API
+    </div>
+  </div>
+
+  <div class="feature-row" style="margin-top:64px">
+    <div>
+      <h3 style="font-size:1.3rem;margin:0 0 16px">Jira: Video Attached to the Ticket</h3>
+      <p style="color:var(--on-surface-variant);font-size:0.9rem;line-height:1.7">Bug report? Record it. Code review context? Record it. The video embeds directly in the Jira ticket — no separate link to lose. AI summary appears inline so triaging engineers see the TL;DR without clicking play.</p>
+      <div style="margin-top:16px;display:flex;gap:8px;flex-wrap:wrap">
+        <span class="pill tc-pill" style="font-size:0.7rem">Auto-embed</span>
+        <span class="pill tc-pill" style="font-size:0.7rem">AI summary in ticket</span>
+        <span class="pill tc-pill" style="font-size:0.7rem">Two-way sync</span>
+      </div>
+    </div>
+    <div class="feature-visual" style="background:var(--surface-container)">
+      <span class="material-symbols-outlined" style="font-size:4rem;opacity:0.4;color:var(--tertiary)">integration_instructions</span>
+    </div>
+  </div>
+
+  <div class="feature-row reverse">
+    <div>
+      <h3 style="font-size:1.3rem;margin:0 0 16px">Slack: Context Without the Meeting</h3>
+      <p style="color:var(--on-surface-variant);font-size:0.9rem;line-height:1.7">Paste a TruCast link and Slack unfurls a rich preview — thumbnail, title, AI summary, and duration. Your team gets the context in the channel without opening another tab. Threaded replies sync back as timestamped comments.</p>
+      <div style="margin-top:16px;display:flex;gap:8px;flex-wrap:wrap">
+        <span class="pill tc-pill" style="font-size:0.7rem">Rich unfurls</span>
+        <span class="pill tc-pill" style="font-size:0.7rem">Thread sync</span>
+        <span class="pill tc-pill" style="font-size:0.7rem">/trucast slash command</span>
+      </div>
+    </div>
+    <div class="feature-visual" style="background:var(--surface-container)">
+      <span class="material-symbols-outlined" style="font-size:4rem;opacity:0.4;color:var(--tertiary)">tag</span>
+    </div>
+  </div>
+
+  <div class="feature-row">
+    <div>
+      <h3 style="font-size:1.3rem;margin:0 0 16px">GitHub: PR Context That Isn't a Novel</h3>
+      <p style="color:var(--on-surface-variant);font-size:0.9rem;line-height:1.7">Embed a TruCast walkthrough in your PR description. Reviewers hear you explain the "why" behind the code instead of reading between the diff lines. AI generates a text summary for anyone who prefers reading.</p>
+      <div style="margin-top:16px;display:flex;gap:8px;flex-wrap:wrap">
+        <span class="pill tc-pill" style="font-size:0.7rem">PR embed</span>
+        <span class="pill tc-pill" style="font-size:0.7rem">GitHub Actions</span>
+        <span class="pill tc-pill" style="font-size:0.7rem">AI text fallback</span>
+      </div>
+    </div>
+    <div class="feature-visual" style="background:var(--surface-container)">
+      <span class="material-symbols-outlined" style="font-size:4rem;opacity:0.4;color:var(--tertiary)">code</span>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ============ BYOS DEEP DIVE ============ -->
+<section class="section" id="byos">
+  <div class="section-label" style="color:var(--tertiary)">Data Sovereignty</div>
+  <h2>Your recordings. <span class="tc-accent">Your infrastructure.</span></h2>
+  <p class="lead">Loom stores your recordings on their servers. Every code walkthrough, every architecture discussion, every bug report with production data visible — living on someone else's infrastructure with someone else's retention policies.</p>
+  <p class="lead" style="margin-top:16px">TruCast's BYOS (Bring Your Own Storage) architecture means your recordings never touch our servers. They stream directly to your cloud bucket. We handle the recording, AI processing, and playback — your data stays in your control.</p>
+
+  <div class="tc-security-grid">
+    <div class="tc-security-item">
+      <span class="material-symbols-outlined">shield</span>
+      <div>
+        <h4>SOC 2 Type II</h4>
+        <p>Independently audited security controls across the entire platform.</p>
+      </div>
+    </div>
+    <div class="tc-security-item">
+      <span class="material-symbols-outlined">cloud_upload</span>
+      <div>
+        <h4>Direct-to-Bucket</h4>
+        <p>Recordings stream to your S3, Azure Blob, or GCS. Zero intermediate storage on our side.</p>
+      </div>
+    </div>
+    <div class="tc-security-item">
+      <span class="material-symbols-outlined">lock</span>
+      <div>
+        <h4>Encryption at Rest &amp; Transit</h4>
+        <p>AES-256 at rest with your KMS keys. TLS 1.3 in transit. Your keys, your control.</p>
+      </div>
+    </div>
+    <div class="tc-security-item">
+      <span class="material-symbols-outlined">vpn_key</span>
+      <div>
+        <h4>SSO / SAML</h4>
+        <p>Okta, Azure AD, Google Workspace. Enforce MFA policies from your IdP.</p>
+      </div>
+    </div>
+    <div class="tc-security-item">
+      <span class="material-symbols-outlined">timer</span>
+      <div>
+        <h4>Retention Policies</h4>
+        <p>Set auto-delete rules that match your compliance requirements. 30 days, 90 days, forever — your call.</p>
+      </div>
+    </div>
+    <div class="tc-security-item">
+      <span class="material-symbols-outlined">dns</span>
+      <div>
+        <h4>Self-Hosted Option</h4>
+        <p>Enterprise plan includes full self-hosted deployment. Everything runs in your VPC. Nothing leaves your network.</p>
+      </div>
+    </div>
+    <div class="tc-security-item">
+      <span class="material-symbols-outlined">gavel</span>
+      <div>
+        <h4>GDPR &amp; CCPA Ready</h4>
+        <p>Data processing agreements, right-to-delete workflows, data export APIs built in.</p>
+      </div>
+    </div>
+    <div class="tc-security-item">
+      <span class="material-symbols-outlined">monitoring</span>
+      <div>
+        <h4>Audit Logs</h4>
+        <p>Full audit trail of who recorded, viewed, shared, or deleted any recording. Export to your SIEM.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="tc-quote-block">
+    <blockquote>"We evaluated Loom but our security team killed it in the first review. Recordings of internal tools and production dashboards sitting on a third-party server? Non-starter. TruCast's BYOS model was the only path to approval."</blockquote>
+    <cite>— Engineering Director, Fortune 500 Financial Services</cite>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ============ COMPARISON TABLE ============ -->
+<section class="section" id="compare">
+  <div class="section-label" style="color:var(--tertiary)">Comparison</div>
+  <h2>TruCast vs. <span style="color:var(--on-surface-variant)">the alternatives</span></h2>
+
+  <div class="glass" style="padding:32px;overflow-x:auto;margin-top:32px">
+    <table class="compare-table">
+      <thead>
+        <tr><th>Capability</th><th style="color:var(--tertiary)">TruCast</th><th>Loom</th><th>Generic Recorder</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>BYOS (Your Cloud Storage)</td><td class="check">&#10003;</td><td class="cross">&#10007;</td><td class="cross">&#10007;</td></tr>
+        <tr><td>AI Transcripts &amp; Summaries</td><td class="check">&#10003;</td><td class="check">&#10003;</td><td class="cross">&#10007;</td></tr>
+        <tr><td>AI Chapter Markers</td><td class="check">&#10003;</td><td class="check">&#10003;</td><td class="cross">&#10007;</td></tr>
+        <tr><td>Timestamped Comments</td><td class="check">&#10003;</td><td class="check">&#10003;</td><td class="cross">&#10007;</td></tr>
+        <tr><td>Jira Deep Integration</td><td class="check">&#10003;</td><td>Basic link only</td><td class="cross">&#10007;</td></tr>
+        <tr><td>GitHub PR Embed</td><td class="check">&#10003;</td><td class="cross">&#10007;</td><td class="cross">&#10007;</td></tr>
+        <tr><td>Linear Integration</td><td class="check">&#10003;</td><td class="cross">&#10007;</td><td class="cross">&#10007;</td></tr>
+        <tr><td>Full Data Sovereignty</td><td class="check">&#10003;</td><td class="cross">&#10007;</td><td class="cross">&#10007;</td></tr>
+        <tr><td>Enterprise SSO / SAML</td><td class="check">&#10003;</td><td class="check">&#10003;</td><td class="cross">&#10007;</td></tr>
+        <tr><td>Self-Hosted Option</td><td class="check">&#10003;</td><td class="cross">&#10007;</td><td class="cross">&#10007;</td></tr>
+        <tr><td>BYOAI Processing</td><td class="check">&#10003;</td><td class="cross">&#10007;</td><td class="cross">&#10007;</td></tr>
+        <tr><td>Multi-Language Transcripts</td><td class="check">&#10003;</td><td class="check">&#10003;</td><td class="cross">&#10007;</td></tr>
+        <tr><td>View Analytics</td><td class="check">&#10003;</td><td class="check">&#10003;</td><td class="cross">&#10007;</td></tr>
+        <tr><td>Retention Policy Controls</td><td class="check">&#10003;</td><td>Limited</td><td class="cross">&#10007;</td></tr>
+        <tr><td>Audit Logs &amp; SIEM Export</td><td class="check">&#10003;</td><td class="cross">&#10007;</td><td class="cross">&#10007;</td></tr>
+        <tr><td>Recording Search (AI)</td><td class="check">&#10003;</td><td class="check">&#10003;</td><td class="cross">&#10007;</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="color:var(--on-surface-variant);font-size:0.85rem;margin-top:16px">Loom is a great product for sales and marketing teams. TruCast is built specifically for engineering teams that need data sovereignty, deep dev-tool integrations, and enterprise security controls.</p>
+</section>
+
+<hr class="divider">
+
+<!-- ============ PRICING ============ -->
+<section class="section" id="pricing">
+  <div class="section-label" style="color:var(--tertiary)">Pricing</div>
+  <h2>Simple pricing. <span class="tc-accent">No per-minute surprises.</span></h2>
+  <p class="lead">Every plan includes unlimited recording length. No storage fees on Team and Enterprise — it's your bucket.</p>
+
+  <div class="card-grid card-grid-3" style="margin-top:48px">
+    <div class="card glass" style="text-align:center">
+      <p style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--on-surface-variant);margin:0 0 8px">Starter</p>
+      <p style="font-size:2.5rem;font-weight:800;color:var(--on-surface);margin:0">Free</p>
+      <p style="color:var(--on-surface-variant);font-size:0.85rem;margin:8px 0 24px">Up to 25 recordings/month</p>
+      <hr class="divider" style="margin:0 0 20px">
+      <div style="text-align:left;color:var(--on-surface-variant);font-size:0.85rem;line-height:2.2">
+        <div style="display:flex;align-items:center;gap:8px"><span class="material-symbols-outlined" style="font-size:16px;color:var(--secondary)">check</span> Screen + camera recording</div>
+        <div style="display:flex;align-items:center;gap:8px"><span class="material-symbols-outlined" style="font-size:16px;color:var(--secondary)">check</span> AI transcripts</div>
+        <div style="display:flex;align-items:center;gap:8px"><span class="material-symbols-outlined" style="font-size:16px;color:var(--secondary)">check</span> Shareable links</div>
+        <div style="display:flex;align-items:center;gap:8px"><span class="material-symbols-outlined" style="font-size:16px;color:var(--secondary)">check</span> 5 GB cloud storage</div>
+        <div style="display:flex;align-items:center;gap:8px"><span class="material-symbols-outlined" style="font-size:16px;color:var(--secondary)">check</span> Basic viewer analytics</div>
+      </div>
+      <a href="/contact.html" class="btn btn-secondary btn-sm" style="margin-top:24px;width:100%;justify-content:center">Get Started Free</a>
+    </div>
+    <div class="card glass tc-border tc-glow" style="text-align:center;position:relative">
+      <div style="position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--tertiary-container);color:white;font-size:0.7rem;font-weight:700;padding:4px 16px;border-radius:100px;text-transform:uppercase;letter-spacing:0.06em">Most Popular</div>
+      <p style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--tertiary);margin:0 0 8px">Team</p>
+      <p style="font-size:2.5rem;font-weight:800;color:var(--on-surface);margin:0">$12<span style="font-size:1rem;font-weight:400;color:var(--on-surface-variant)">/user/mo</span></p>
+      <p style="color:var(--on-surface-variant);font-size:0.85rem;margin:8px 0 24px">Unlimited recordings</p>
+      <hr class="divider" style="margin:0 0 20px">
+      <div style="text-align:left;color:var(--on-surface-variant);font-size:0.85rem;line-height:2.2">
+        <div style="display:flex;align-items:center;gap:8px"><span class="material-symbols-outlined" style="font-size:16px;color:var(--secondary)">check</span> Everything in Starter</div>
+        <div style="display:flex;align-items:center;gap:8px"><span class="material-symbols-outlined" style="font-size:16px;color:var(--tertiary)">star</span> <strong style="color:var(--on-surface)">BYOS — your cloud bucket</strong></div>
+        <div style="display:flex;align-items:center;gap:8px"><span class="material-symbols-outlined" style="font-size:16px;color:var(--secondary)">check</span> Jira, Slack, GitHub integrations</div>
+        <div style="display:flex;align-items:center;gap:8px"><span class="material-symbols-outlined" style="font-size:16px;color:var(--secondary)">check</span> Timestamped comments</div>
+        <div style="display:flex;align-items:center;gap:8px"><span class="material-symbols-outlined" style="font-size:16px;color:var(--secondary)">check</span> AI summaries &amp; chapters</div>
+        <div style="display:flex;align-items:center;gap:8px"><span class="material-symbols-outlined" style="font-size:16px;color:var(--secondary)">check</span> Team workspace</div>
+        <div style="display:flex;align-items:center;gap:8px"><span class="material-symbols-outlined" style="font-size:16px;color:var(--secondary)">check</span> View analytics</div>
+      </div>
+      <a href="/contact.html" class="btn btn-primary tc-btn btn-sm" style="margin-top:24px;width:100%;justify-content:center">Start 14-Day Free Trial</a>
+    </div>
+    <div class="card glass" style="text-align:center">
+      <p style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--on-surface-variant);margin:0 0 8px">Enterprise</p>
+      <p style="font-size:2.5rem;font-weight:800;color:var(--on-surface);margin:0">Custom</p>
+      <p style="color:var(--on-surface-variant);font-size:0.85rem;margin:8px 0 24px">Unlimited everything</p>
+      <hr class="divider" style="margin:0 0 20px">
+      <div style="text-align:left;color:var(--on-surface-variant);font-size:0.85rem;line-height:2.2">
+        <div style="display:flex;align-items:center;gap:8px"><span class="material-symbols-outlined" style="font-size:16px;color:var(--secondary)">check</span> Everything in Team</div>
+        <div style="display:flex;align-items:center;gap:8px"><span class="material-symbols-outlined" style="font-size:16px;color:var(--secondary)">check</span> SSO / SAML</div>
+        <div style="display:flex;align-items:center;gap:8px"><span class="material-symbols-outlined" style="font-size:16px;color:var(--secondary)">check</span> Self-hosted deployment</div>
+        <div style="display:flex;align-items:center;gap:8px"><span class="material-symbols-outlined" style="font-size:16px;color:var(--secondary)">check</span> BYOAI processing</div>
+        <div style="display:flex;align-items:center;gap:8px"><span class="material-symbols-outlined" style="font-size:16px;color:var(--secondary)">check</span> Custom retention policies</div>
+        <div style="display:flex;align-items:center;gap:8px"><span class="material-symbols-outlined" style="font-size:16px;color:var(--secondary)">check</span> Audit logs &amp; SIEM export</div>
+        <div style="display:flex;align-items:center;gap:8px"><span class="material-symbols-outlined" style="font-size:16px;color:var(--secondary)">check</span> Dedicated support &amp; SLA</div>
+      </div>
+      <a href="/contact.html" class="btn btn-secondary btn-sm" style="margin-top:24px;width:100%;justify-content:center">Contact Sales</a>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ============ FAQ ============ -->
+<section class="section" id="faq">
+  <div class="section-label" style="color:var(--tertiary)">FAQ</div>
+  <h2>Questions <span class="tc-accent">answered</span></h2>
+
+  <div class="tc-faq" style="margin-top:40px">
+    <details class="tc-faq-item">
+      <summary>How is TruCast different from Loom?</summary>
+      <div class="faq-body">TruCast is built for engineering teams with enterprise security requirements. The core differentiator is BYOS — your recordings live in your cloud storage, not ours. We also offer deeper integrations with developer tools (Jira, GitHub, Linear), self-hosted deployment options, BYOAI processing, and audit logs with SIEM export. Loom is great for sales and marketing. TruCast is purpose-built for engineering.</div>
+    </details>
+    <details class="tc-faq-item">
+      <summary>What does BYOS mean exactly?</summary>
+      <div class="faq-body">Bring Your Own Storage. When you record a TruCast video, the recording streams directly to your cloud storage bucket (AWS S3, Azure Blob Storage, or Google Cloud Storage). The video data never touches TruVideo servers. We handle the recording logic, AI processing pipeline, and playback CDN — but your actual video files stay in infrastructure you own and control.</div>
+    </details>
+    <details class="tc-faq-item">
+      <summary>Can I use TruCast without BYOS?</summary>
+      <div class="faq-body">Yes. The Starter plan (free) includes 5 GB of TruVideo-managed cloud storage. BYOS is available on Team and Enterprise plans for teams that need data sovereignty. You can start free and migrate to BYOS when your security team requires it — no re-recording needed.</div>
+    </details>
+    <details class="tc-faq-item">
+      <summary>What AI model processes my recordings?</summary>
+      <div class="faq-body">TruCast uses TruVideo's Video Query Service (VQS) for transcription, summarization, and chapter generation. On the Enterprise plan, BYOAI lets you plug in your own AI models — run everything through your Azure OpenAI instance, your self-hosted Whisper deployment, or any model endpoint. The AI pipeline is fully configurable.</div>
+    </details>
+    <details class="tc-faq-item">
+      <summary>Is there a recording length limit?</summary>
+      <div class="faq-body">No. All plans support unlimited recording length. We don't charge by the minute. The Starter plan limits the number of recordings (25/month); Team and Enterprise are unlimited in every dimension.</div>
+    </details>
+    <details class="tc-faq-item">
+      <summary>Can viewers watch without creating an account?</summary>
+      <div class="faq-body">Yes. Public and link-only recordings can be viewed by anyone with the URL — no account required. For team-restricted recordings, viewers authenticate through your SSO provider. You control the access model per recording or per workspace.</div>
+    </details>
+    <details class="tc-faq-item">
+      <summary>What platforms does the recorder support?</summary>
+      <div class="faq-body">Chrome extension (works on any Chromium browser), macOS desktop app, and Windows desktop app. The desktop apps support system audio capture and multi-monitor recording. Linux support is on the roadmap.</div>
+    </details>
+    <details class="tc-faq-item">
+      <summary>How does the self-hosted option work?</summary>
+      <div class="faq-body">Enterprise plan includes a Docker/Kubernetes deployment package. The entire TruCast stack — recording ingest, AI processing, playback CDN, and web UI — runs in your VPC. Nothing leaves your network. We provide Helm charts, Terraform modules, and dedicated onboarding support.</div>
+    </details>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="section cta-banner">
+  <h2>Your code walkthroughs deserve better<br>than a third-party server.</h2>
+  <p>TruCast is in early access for engineering teams. Get on the list.</p>
+  <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center">
+    <a href="/contact.html" class="btn btn-primary tc-btn">Get Early Access</a>
+    <a href="/contact.html" class="btn btn-secondary">Talk to Engineering</a>
+  </div>
+</section>
+
+<footer class="site-footer"><div class="footer-inner"><div class="footer-brand"><a href="/" class="nav-logo">Tru<span>Video</span></a><p>The visual intelligence platform that turns video into structured data, automated workflows, and verifiable proof.</p></div><div class="footer-col"><h4>Platform</h4><a href="/platform.html">Overview</a><a href="/platform-video-sdk.html">Video SDK</a><a href="/platform-vqs.html">Video Query Service</a><a href="/platform-messaging.html">Messaging</a><a href="/platform-ai.html">AI &amp; Vision</a></div><div class="footer-col"><h4>Solutions</h4><a href="/solutions-automotive.html">Automotive</a><a href="/solutions-fleet.html">Fleet</a><a href="/solutions-aviation.html">Aviation</a><a href="/solutions-field-service.html">Field Service</a><a href="/solutions-insurance.html">Insurance</a><a href="/solutions-construction.html">Construction</a></div><div class="footer-col"><h4>Company</h4><a href="/about.html">About</a><a href="/team.html">Team</a><a href="/careers.html">Careers</a><a href="/partners.html">Partners</a><a href="/contact.html">Contact</a><a href="/articles.html">Articles</a></div></div><div class="footer-bottom"><span>&copy; 2026 TruVideo, Inc. All rights reserved.</span><span><a href="/privacy.html" style="color:inherit;text-decoration:none;margin-right:16px">Privacy</a><a href="/terms.html" style="color:inherit;text-decoration:none">Terms</a></span></div></footer>
+<script src="/assets/js/nav.js"></script>
+</body>
+</html>
