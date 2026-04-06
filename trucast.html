@@ -108,10 +108,18 @@
 .roadmap-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:48px}
 .roadmap-card{padding:28px;border-radius:12px;background:rgba(20,55,84,0.4);border:1px solid rgba(148,204,255,0.06)}
 .roadmap-card .r-status{font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:10px}
+.r-now{color:var(--secondary)}
 .r-building{color:var(--green)}
 .r-next{color:var(--primary)}
 .roadmap-card h4{font-size:0.95rem;font-weight:700;margin:0 0 8px}
 .roadmap-card p{font-size:0.85rem;color:var(--on-surface-variant);margin:0;line-height:1.6}
+.roadmap-list{list-style:none;padding:0;margin:16px 0 0}
+.roadmap-list li{padding:8px 0;font-size:0.88rem;color:var(--on-surface-variant);border-bottom:1px solid rgba(148,204,255,0.04);display:flex;align-items:center;gap:8px}
+.roadmap-list li:last-child{border-bottom:none}
+.roadmap-list .r-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+.r-dot-now{background:var(--secondary)}
+.r-dot-building{background:var(--green)}
+.r-dot-next{background:var(--primary)}
 
 /* CTA bottom */
 .cta-bottom{text-align:center;padding:80px 24px}
@@ -343,7 +351,7 @@ const tickets = <span class="fn">await</span> rec.extractTickets()</code>
         <div><span class="material-symbols-outlined">check</span> Jira ticket generation</div>
         <div><span class="material-symbols-outlined">check</span> BYOS storage (your cost)</div>
         <div><span class="material-symbols-outlined">check</span> BYOAI inference (your cost)</div>
-        <div><span class="material-symbols-outlined">check</span> MCP server access</div>
+        <div><span class="material-symbols-outlined">check</span> Full API access (coming)</div>
       </div>
       <a href="/contact.html" class="btn btn-primary btn-sm" style="margin-top:24px;width:100%;justify-content:center">Download Free</a>
     </div>
@@ -389,19 +397,42 @@ const tickets = <span class="fn">await</span> rec.extractTickets()</code>
 
   <div class="roadmap-grid">
     <div class="roadmap-card">
-      <div class="r-status r-building">Building Now</div>
-      <h4>MCP Server (Open Source)</h4>
-      <p>Call TruVideo from Claude Code, Cursor, Windsurf, or any MCP-compatible agent. Open source on GitHub.</p>
+      <div class="r-status r-now">Shipped</div>
+      <h4>Now</h4>
+      <ul class="roadmap-list">
+        <li><span class="r-dot r-dot-now"></span> Auto-recording</li>
+        <li><span class="r-dot r-dot-now"></span> Auto-save</li>
+        <li><span class="r-dot r-dot-now"></span> Jira ticket generation</li>
+        <li><span class="r-dot r-dot-now"></span> View history</li>
+        <li><span class="r-dot r-dot-now"></span> BYOAI (OpenAI, Anthropic, Gemini)</li>
+        <li><span class="r-dot r-dot-now"></span> macOS app</li>
+      </ul>
     </div>
     <div class="roadmap-card">
-      <div class="r-status r-building">Building Now</div>
-      <h4>Linux Support</h4>
-      <p>Native Linux desktop app. Same BYOS/BYOAI architecture. AppImage + deb + rpm.</p>
+      <div class="r-status r-building">Building</div>
+      <h4>In Progress</h4>
+      <ul class="roadmap-list">
+        <li><span class="r-dot r-dot-building"></span> Transcript generation</li>
+        <li><span class="r-dot r-dot-building"></span> Azure / S3 / GCS BYOS</li>
+        <li><span class="r-dot r-dot-building"></span> Windows support</li>
+        <li><span class="r-dot r-dot-building"></span> Linux support</li>
+        <li><span class="r-dot r-dot-building"></span> Linear integration</li>
+        <li><span class="r-dot r-dot-building"></span> GitHub Issues integration</li>
+        <li><span class="r-dot r-dot-building"></span> Slack notifications</li>
+      </ul>
     </div>
     <div class="roadmap-card">
-      <div class="r-status r-next">Next</div>
-      <h4>TypeScript SDK</h4>
-      <p>Embed recording and playback in any application. Open beta Q3 2026.</p>
+      <div class="r-status r-next">Coming</div>
+      <h4>Next Up</h4>
+      <ul class="roadmap-list">
+        <li><span class="r-dot r-dot-next"></span> MCP Server</li>
+        <li><span class="r-dot r-dot-next"></span> Agent session recording</li>
+        <li><span class="r-dot r-dot-next"></span> Screen analysis API</li>
+        <li><span class="r-dot r-dot-next"></span> watch_for() triggers</li>
+        <li><span class="r-dot r-dot-next"></span> Multi-agent oversight</li>
+        <li><span class="r-dot r-dot-next"></span> Visual diff tools</li>
+        <li><span class="r-dot r-dot-next"></span> SDK open beta</li>
+      </ul>
     </div>
   </div>
 </section>
