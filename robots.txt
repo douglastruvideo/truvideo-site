@@ -1,6 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /assets/js/
-Disallow: /dist/
 
 Sitemap: https://truvideo.co/sitemap.xml
