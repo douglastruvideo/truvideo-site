@@ -6,6 +6,12 @@
   <url><loc>https://truvideo.co/platform-vqs.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://truvideo.co/platform-messaging.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://truvideo.co/platform-ai.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://truvideo.co/platform-inspect.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://truvideo.co/platform-engage.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://truvideo.co/platform-insight.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://truvideo.co/platform-intake.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://truvideo.co/platform-reach.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://truvideo.co/platform-assist.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://truvideo.co/solutions-automotive.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://truvideo.co/solutions-fleet.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://truvideo.co/solutions-aviation.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
@@ -20,7 +26,20 @@
   <url><loc>https://truvideo.co/careers.html</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://truvideo.co/contact.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://truvideo.co/articles.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://truvideo.co/articles/why-visual-intelligence-not-video.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://truvideo.co/articles/digital-vehicle-inspection-guide.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://truvideo.co/articles/what-is-a-dvir.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://truvideo.co/articles/pre-trip-inspection-checklist.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://truvideo.co/articles/best-loom-alternatives.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://truvideo.co/articles/multipoint-inspection-guide.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://truvideo.co/articles/fmcsa-dvir-requirements.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://truvideo.co/articles/video-sdk-comparison.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://truvideo.co/articles/ai-damage-detection-vs-manual-inspection.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://truvideo.co/articles/async-video-engineering-teams.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://truvideo.co/articles/mro-software-aviation-maintenance.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://truvideo.co/articles/increase-repair-order-revenue-video.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://truvideo.co/articles/electronic-dvir-guide.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://truvideo.co/articles/byos-architecture.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://truvideo.co/articles/why-visual-intelligence-not-video.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://truvideo.co/privacy.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://truvideo.co/terms.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
 </urlset>
