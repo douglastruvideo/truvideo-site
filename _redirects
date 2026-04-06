@@ -1,4 +1,79 @@
-# Actual redirects (301) - old shorthand paths to canonical clean URLs
+# =============================================================================
+# TruVideo Cloudflare Pages Redirects
+# =============================================================================
+# This file handles redirects when the site goes live on truvideo.com,
+# mapping old truvideo.com URL paths to the new clean URL structure.
+# Cloudflare Pages processes rules top-to-bottom; first match wins.
+# Format: /old-path /new-path 301
+# =============================================================================
+
+
+# -----------------------------------------------------------------------------
+# Section 1: .html extension redirects (clean URLs)
+# -----------------------------------------------------------------------------
+# Strip .html extensions for all current pages
+
+/about.html /about 301
+/articles.html /articles 301
+/careers.html /careers 301
+/contact.html /contact 301
+/customers.html /customers 301
+/partners.html /partners 301
+/platform.html /platform 301
+/platform-ai.html /platform-ai 301
+/platform-assist.html /platform-assist 301
+/platform-engage.html /platform-engage 301
+/platform-insight.html /platform-insight 301
+/platform-inspect.html /platform-inspect 301
+/platform-intake.html /platform-intake 301
+/platform-messaging.html /platform-messaging 301
+/platform-reach.html /platform-reach 301
+/platform-technology.html /platform-technology 301
+/platform-video-sdk.html /platform-video-sdk 301
+/platform-vqs.html /platform-vqs 301
+/privacy.html /privacy 301
+/solutions-automotive.html /solutions-automotive 301
+/solutions-aviation.html /solutions-aviation 301
+/solutions-construction.html /solutions-construction 301
+/solutions-field-service.html /solutions-field-service 301
+/solutions-fleet.html /solutions-fleet 301
+/solutions-insurance.html /solutions-insurance 301
+/team.html /team 301
+/terms.html /terms 301
+/truvideo.html /truvideo 301
+/why-truvideo.html /why-truvideo 301
+
+# Article .html redirects
+/articles/ai-damage-detection-vs-manual-inspection.html /articles/ai-damage-detection-vs-manual-inspection 301
+/articles/aircraft-maintenance-management.html /articles/aircraft-maintenance-management 301
+/articles/async-video-engineering-teams.html /articles/async-video-engineering-teams 301
+/articles/best-loom-alternatives.html /articles/best-loom-alternatives 301
+/articles/byos-architecture.html /articles/byos-architecture 301
+/articles/claims-automation-guide.html /articles/claims-automation-guide 301
+/articles/csi-score-customer-satisfaction-guide.html /articles/csi-score-customer-satisfaction-guide 301
+/articles/digital-vehicle-inspection-guide.html /articles/digital-vehicle-inspection-guide 301
+/articles/electronic-dvir-guide.html /articles/electronic-dvir-guide 301
+/articles/fleet-inspection-app.html /articles/fleet-inspection-app 301
+/articles/fleet-manager-guide.html /articles/fleet-manager-guide 301
+/articles/fmcsa-dvir-requirements.html /articles/fmcsa-dvir-requirements 301
+/articles/increase-repair-order-revenue-video.html /articles/increase-repair-order-revenue-video 301
+/articles/insurance-claims-process.html /articles/insurance-claims-process 301
+/articles/insurance-fraud-detection.html /articles/insurance-fraud-detection 301
+/articles/mro-software-aviation-maintenance.html /articles/mro-software-aviation-maintenance 301
+/articles/multipoint-inspection-guide.html /articles/multipoint-inspection-guide 301
+/articles/pre-trip-inspection-checklist.html /articles/pre-trip-inspection-checklist 301
+/articles/service-advisor-guide.html /articles/service-advisor-guide 301
+/articles/vehicle-inspection-checklist.html /articles/vehicle-inspection-checklist 301
+/articles/vehicle-inspection-form.html /articles/vehicle-inspection-form 301
+/articles/vehicle-inspection-report.html /articles/vehicle-inspection-report 301
+/articles/video-sdk-comparison.html /articles/video-sdk-comparison 301
+/articles/what-is-a-dvir.html /articles/what-is-a-dvir 301
+/articles/why-visual-intelligence-not-video.html /articles/why-visual-intelligence-not-video 301
+
+
+# -----------------------------------------------------------------------------
+# Section 2: Shorthand path aliases
+# -----------------------------------------------------------------------------
 /sdk  /platform-video-sdk  301
 /vqs  /platform-vqs  301
 /messaging  /platform-messaging  301
@@ -9,5 +84,227 @@
 /field-service  /solutions-field-service  301
 /insurance  /solutions-insurance  301
 /construction  /solutions-construction  301
+
+
+# =============================================================================
+# Section 3: Old truvideo.com page redirects
+# =============================================================================
+# These map the old WordPress-based truvideo.com URL structure to the new
+# static site. Discovered via Google index of truvideo.com (April 2026).
+# Priority: specific blog posts with SEO rankings first, then pages.
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# 3a: HIGH-PRIORITY blog posts (known ranking pages for SEO keywords)
+# -----------------------------------------------------------------------------
+# These posts rank for valuable keywords and MUST redirect to equivalent content.
+
+# Old CSI score articles -> new comprehensive CSI guide
+# Ranks for: "csi score", "what is a csi score", "how to increase csi score"
+/what-criteria-are-used-to-quantify-a-customers-satisfaction-in-a-csi-score/  /articles/csi-score-customer-satisfaction-guide  301
+/how-to-increase-your-csi-score/  /articles/csi-score-customer-satisfaction-guide  301
+/service/how-to-increase-your-csi-score/  /articles/csi-score-customer-satisfaction-guide  301
+
+# Old NPS article -> new CSI guide (covers NPS as well)
+# Ranks for: "dealer nps", "net promoter score dealership"
+/why-a-good-net-promoter-score-can-benefit-your-dealership/  /articles/csi-score-customer-satisfaction-guide  301
+
+# Old reputation management article -> CSI guide (reputation/satisfaction overlap)
+/reputation-management-guide-for-automotive-service-departments/  /articles/csi-score-customer-satisfaction-guide  301
+
+# -----------------------------------------------------------------------------
+# 3b: Old blog posts about inspections & DVIs -> new article equivalents
+# -----------------------------------------------------------------------------
+
+# Multipoint inspection content
+/what-is-a-truvideo-multipoint-inspection/  /articles/multipoint-inspection-guide  301
+
+# Inspection video guide
+/the-ultimate-guide-to-inspection-videos/  /articles/digital-vehicle-inspection-guide  301
+
+# Condition reporting articles -> vehicle inspection content
+/dealership-condition-reporting/  /articles/vehicle-inspection-report  301
+/condition-report-accurate-complete/  /articles/vehicle-inspection-form  301
+
+# -----------------------------------------------------------------------------
+# 3c: Old blog posts about dealership video, AI, productivity
+# -----------------------------------------------------------------------------
+
+# Video implementation and marketing
+/implementing-video-at-your-dealership/  /articles/increase-repair-order-revenue-video  301
+/heres-how-you-can-use-video-to-market-your-dealership/  /articles/increase-repair-order-revenue-video  301
+/what-is-video-texting-and-how-can-it-improve-productivity-for-your-dealership/  /articles/increase-repair-order-revenue-video  301
+
+# AI articles
+/the-importance-of-ai/  /platform-ai  301
+/ai-car-dealership-vertical-dealer-efficiency/  /platform-ai  301
+
+# Customer communication articles -> service advisor guide
+/improving-customer-communication-in-your-dealerships-service-department/  /articles/service-advisor-guide  301
+/service/video-improve-customer-service-dealership/  /articles/service-advisor-guide  301
+
+# Reviews and reputation management
+/how-to-manage-positive-and-negative-reviews/  /articles/csi-score-customer-satisfaction-guide  301
+
+# Auto repair explainers -> service advisor guide
+/explaining-5-common-auto-repairs/  /articles/service-advisor-guide  301
+
+# -----------------------------------------------------------------------------
+# 3d: Old product/solution pages -> new equivalents
+# -----------------------------------------------------------------------------
+
+# Service platform pages
+/service/  /solutions-automotive  301
+/service/*  /solutions-automotive  301
+
+# Sales pages
+/sales/  /solutions-automotive  301
+
+# Platform page
+/platform/  /platform  301
+
+# AI page
+/ai/  /platform-ai  301
+
+# OEM page -> partners (closest match)
+/oem/  /partners  301
+
+# Commercial trucking -> fleet solutions
+/commercial-trucking/  /solutions-fleet  301
+
+# Automotive vertical page
+/automotive/  /solutions-automotive  301
+
+# Solutions page
+/solutions/  /platform  301
+
+# -----------------------------------------------------------------------------
+# 3e: Old company/info pages -> new equivalents
+# -----------------------------------------------------------------------------
+
+# About page
+/about-truvideo/  /about  301
+
+# Team/careers
+/join-our-team/  /careers  301
+
+# Contact/demo
+/book-a-demo/  /contact  301
+
+# Support -> contact
+/support/  /contact  301
+
+# FAQs -> about (no dedicated FAQ page on new site)
+/faqs/  /about  301
+
+# Testimonials -> customers
+/testimonials/  /customers  301
+
+# In the news -> about
+/in-the-news/  /about  301
+
+# Packages/pricing -> contact (no public pricing page)
+/packages/  /contact  301
+
+# Software partnerships -> partners
+/software-partnerships/  /partners  301
+
+# eBooks/resources -> articles
+/service-sales-ebooks-truvideo/  /articles  301
+
+# Privacy and terms
+/privacy-policy/  /privacy  301
+/terms-of-service/  /terms  301
+/terms-and-conditions/  /terms  301
+
+# iOS install guide -> platform (app-related)
+/truvideo-installing-ios/  /platform  301
+
+# Comparison pages -> why-truvideo
+/compare-truvideo-to-liveperson-automotive/  /why-truvideo  301
+/truvideo-vs-pocketexpert/  /why-truvideo  301
+
+# Test/staging pages that might be indexed
+/home-test/  /  301
+
+# Old articles archive (WordPress)
+/articles/  /articles  301
+
+# -----------------------------------------------------------------------------
+# 3f: Old case study pages -> customers page
+# -----------------------------------------------------------------------------
+
+/case-studies/  /customers  301
+/rihm-kenworth-case-study/  /customers  301
+/dobbs-truck-group-case-study/  /customers  301
+/wallwork-case-study/  /customers  301
+/walser-trusales-case-study/  /customers  301
+/material-handling-case-study/  /customers  301
+/hello-auto-truservice-case-study/  /customers  301
+/case-studies/material-handling-case-study/  /customers  301
+/case-studies/walser-truservice-case-study/  /customers  301
+/case-studies/hello-auto-truservice-case-study/  /customers  301
+/case-studies/*  /customers  301
+
+# BG distributor spotlight
+/bg-distributor-spotlight/  /customers  301
+
+
+# =============================================================================
+# Section 4: WordPress catch-all patterns
+# =============================================================================
+# The old site was WordPress-based. These catch-alls handle URL patterns
+# we may not have discovered individually.
+
+# Blog catch-all (WordPress blog URLs)
 /blog  /articles  301
 /blog/*  /articles/:splat  301
+
+# WordPress date-based blog permalinks: /yyyy/mm/dd/slug or /yyyy/mm/slug
+/2018/*  /articles  301
+/2019/*  /articles  301
+/2020/*  /articles  301
+/2021/*  /articles  301
+/2022/*  /articles  301
+/2023/*  /articles  301
+/2024/*  /articles  301
+/2025/*  /articles  301
+/2026/*  /articles  301
+
+# WordPress category/tag archive pages
+/category/*  /articles  301
+/tag/*  /articles  301
+/author/*  /about  301
+
+# WordPress pagination
+/page/*  /  301
+
+# WordPress feed URLs
+/feed  /  301
+/feed/*  /  301
+/rss  /  301
+/rss/*  /  301
+
+# WordPress standard pages
+/wp-login.php  /  301
+/wp-admin  /  301
+/wp-admin/*  /  301
+/wp-content/*  /  301
+/wp-includes/*  /  301
+/wp-json/*  /  301
+/xmlrpc.php  /  301
+/sitemap.xml  /  301
+/sitemap_index.xml  /  301
+
+# WordPress search
+/search/*  /  301
+
+# Old resources/downloads catch-all
+/resources  /articles  301
+/resources/*  /articles  301
+/ebooks  /articles  301
+/ebooks/*  /articles  301
+/webinars  /articles  301
+/webinars/*  /articles  301
+/whitepapers  /articles  301
+/whitepapers/*  /articles  301
