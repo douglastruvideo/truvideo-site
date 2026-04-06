@@ -29,3 +29,14 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.1 });
 
 document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+
+// Load Google Fonts after idle to avoid LCP repaint
+(window.requestIdleCallback || function(cb){setTimeout(cb,200)})(function(){
+  var h=document.head;
+  var a=document.createElement('link');a.rel='stylesheet';
+  a.href='https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap';
+  h.appendChild(a);
+  var b=document.createElement('link');b.rel='stylesheet';
+  b.href='https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap';
+  h.appendChild(b);
+});
