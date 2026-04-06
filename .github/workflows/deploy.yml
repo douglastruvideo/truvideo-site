@@ -19,17 +19,12 @@ jobs:
 
       - name: Build dist/
         run: |
-          mkdir -p dist
-          find . \
-            -not -path './.git*' \
-            -not -path './.github*' \
-            -not -path './dist*' \
-            -not -name '.gitignore' \
-            | while read f; do
-              dest="dist/$f"
-              mkdir -p "$(dirname "$dest")"
-              cp -r "$f" "$dest" 2>/dev/null || true
-            done
+          rsync -av \
+            --exclude='.git/' \
+            --exclude='.github/' \
+            --exclude='dist/' \
+            --exclude='.gitignore' \
+            . dist/
 
       - name: Deploy via Wrangler
         uses: cloudflare/wrangler-action@v3
