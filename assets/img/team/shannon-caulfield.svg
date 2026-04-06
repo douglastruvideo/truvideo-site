@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="gshannoncaulfield" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2d6a4f"/>
+      <stop offset="100%" stop-color="#52b788"/>
+    </linearGradient>
+  </defs>
+  <rect width="200" height="200" fill="url(#gshannoncaulfield)"/>
+  <text x="100" y="100" font-family="system-ui,sans-serif" font-weight="800" font-size="80" fill="white" text-anchor="middle" dominant-baseline="central">SC</text>
+</svg>
