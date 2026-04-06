@@ -1,1 +1,19 @@
+# Build output
 dist/
+
+# Cloudflare / Wrangler
+.wrangler/
+.dev.vars
+
+# Node (if build tooling is added later)
+node_modules/
+npm-debug.log*
+
+# macOS
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
