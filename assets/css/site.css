@@ -1,5 +1,5 @@
 /* TruVideo Site — Global Styles */
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+/* Plus Jakarta Sans loaded via <link> in HTML for faster critical path */
 
 :root {
   --primary: #94ccff;
@@ -401,7 +401,7 @@ body {
   justify-content: center;
   gap: 40px;
   padding: 40px 0;
-  opacity: 0.5;
+  opacity: 0.7;
 }
 
 .logo-bar span {
@@ -438,7 +438,8 @@ body {
   margin-top: 12px;
 }
 
-.footer-col h4 {
+.footer-col h4,
+.footer-col .footer-heading {
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
