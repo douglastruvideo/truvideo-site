@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#001527">
+  <title>Work Order Documentation Best Practices: The Complete Guide for Field Service (2026) — TruVideo</title>
+  <meta name="description" content="Master work order documentation in field service. Best practices for digital work orders, required fields, photo and video documentation, compliance, and software integration.">
+  <meta name="keywords" content="work order documentation, work order documentation best practices, field service work orders, work order management, digital work orders, work order software">
+  <link rel="canonical" href="https://truvideo.co/articles/work-order-documentation-best-practices">
+  <style>:root{--primary:#94ccff;--primary-container:#0077b6;--secondary:#6ad7da;--secondary-container:#25a0a3;--tertiary:#ffb59d;--tertiary-container:#c8440d;--surface:#001527;--surface-container:#00213a;--surface-container-high:#042c49;--surface-container-highest:#143754;--surface-container-lowest:#000f1f;--on-surface:#cfe5ff;--on-surface-variant:#bfc7d1;--on-primary:#003352;--on-primary-container:#f3f7ff;--on-tertiary:#5d1900;--outline-variant:#404850}*{box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--surface);color:var(--on-surface);margin:0;line-height:1.6;-webkit-font-smoothing:antialiased}.mesh-bg{position:fixed;inset:0;z-index:-1;background:radial-gradient(ellipse 60% 50% at 20% 30%,rgba(0,119,182,0.15) 0%,transparent 70%),radial-gradient(ellipse 50% 40% at 80% 70%,rgba(37,160,163,0.1) 0%,transparent 70%),var(--surface)}.site-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(0,21,39,0.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(148,204,255,0.06);transition:background 0.3s}.nav-inner{max-width:1280px;margin:0 auto;padding:0 24px;height:72px;display:flex;align-items:center;justify-content:space-between}.nav-logo{font-weight:800;font-size:1.35rem;color:var(--primary);text-decoration:none;letter-spacing:-0.02em}.nav-links{display:flex;align-items:center;gap:8px;list-style:none;margin:0;padding:0}.nav-links a{color:var(--on-surface-variant);text-decoration:none;font-size:0.875rem;font-weight:500;padding:8px 14px;border-radius:8px;transition:color 0.2s,background 0.2s}.nav-links a:hover{color:var(--on-surface);background:rgba(148,204,255,0.06)}.nav-links .nav-cta{background:var(--primary-container);color:var(--on-primary-container);font-weight:600;padding:8px 20px}.nav-links .nav-cta:hover{background:#008fcc}.nav-dropdown{position:relative}.nav-dropdown-trigger{cursor:pointer;display:flex;align-items:center;gap:4px}.nav-dropdown-trigger::after{content:'';border-left:4px solid transparent;border-right:4px solid transparent;border-top:4px solid currentColor;opacity:0.5}.nav-dropdown-menu{display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);min-width:220px;background:rgba(0,33,58,0.95);backdrop-filter:blur(20px);border:1px solid rgba(148,204,255,0.08);border-radius:12px;padding:12px 8px 8px;margin-top:0;box-shadow:0 20px 60px rgba(0,0,0,0.4)}.nav-dropdown:hover .nav-dropdown-menu{display:block}.nav-dropdown-menu a{display:block;padding:10px 14px;border-radius:8px;font-size:0.825rem}.nav-dropdown-menu .dd-label{font-size:0.7rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--on-surface-variant);opacity:0.6;padding:8px 14px 4px;pointer-events:none}.nav-toggle{display:none;background:none;border:none;color:var(--on-surface);font-size:1.5rem;cursor:pointer;padding:8px}@media (max-width:1024px){.nav-toggle{display:block}.nav-links{display:none;position:absolute;top:72px;left:0;right:0;background:rgba(0,15,31,0.97);backdrop-filter:blur(20px);flex-direction:column;padding:16px 24px;gap:4px;border-bottom:1px solid rgba(148,204,255,0.06)}.nav-links.open{display:flex}.nav-dropdown-menu{position:static;transform:none;box-shadow:none;background:rgba(20,55,84,0.3)}.nav-dropdown:hover .nav-dropdown-menu{display:none}.nav-dropdown.open .nav-dropdown-menu{display:block}}.hero-sm{min-height:auto;padding:140px 24px 60px}.hero h1{font-size:clamp(2.5rem,5vw,4rem);font-weight:800;line-height:1.08;letter-spacing:-0.03em;margin:0 0 24px}.section{max-width:1280px;margin:0 auto;padding:80px 24px}.section-label{font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--secondary);font-weight:600;margin-bottom:12px}.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:12px;font-weight:600;font-size:0.95rem;text-decoration:none;transition:all 0.2s}.btn-primary{background:var(--primary-container);color:var(--on-primary-container)}.btn-primary:hover{background:#008fcc}.site-footer{border-top:1px solid rgba(148,204,255,0.06);padding:64px 24px 32px;margin-top:80px}.footer-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:2fr repeat(3,1fr);gap:48px}@media (max-width:768px){.footer-inner{grid-template-columns:1fr 1fr;gap:32px}}.footer-brand p{color:var(--on-surface-variant);font-size:0.85rem;max-width:280px;line-height:1.6;margin-top:12px}.footer-col .footer-heading{font-size:0.75rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--on-surface-variant);opacity:0.7;margin:0 0 16px}.footer-col a{display:block;color:var(--on-surface-variant);text-decoration:none;font-size:0.85rem;padding:4px 0}.footer-col a:hover{color:var(--on-surface)}.footer-bottom{max-width:1280px;margin:48px auto 0;padding-top:24px;border-top:1px solid rgba(148,204,255,0.04);display:flex;justify-content:space-between;align-items:center;font-size:0.8rem;color:var(--on-surface-variant);opacity:0.6}</style>
+  <style>
+    .article-body{max-width:760px;margin:0 auto}
+    .article-body h2{font-size:1.5rem;margin:48px 0 16px}
+    .article-body h3{font-size:1.15rem;margin:32px 0 12px}
+    .article-body p{color:var(--on-surface-variant);line-height:1.8;margin:0 0 20px;font-size:.95rem}
+    .article-body ul,.article-body ol{color:var(--on-surface-variant);line-height:1.8;margin:0 0 20px;padding-left:24px;font-size:.95rem}
+    .article-body li{margin-bottom:8px}
+    .article-body blockquote{border-left:3px solid var(--primary);padding:16px 24px;margin:32px 0;background:rgba(148,204,255,.03);border-radius:0 12px 12px 0}
+    .article-body blockquote p{font-style:italic;color:var(--on-surface);margin:0}
+    .article-body strong{color:var(--on-surface)}
+    .article-body a{color:var(--primary);text-decoration:underline;text-underline-offset:2px}
+    .article-meta-bar{display:flex;gap:16px;align-items:center;margin-bottom:32px;font-size:.8rem;color:var(--on-surface-variant);opacity:.7;flex-wrap:wrap}
+    .article-tags{display:flex;gap:6px;margin-bottom:24px}
+    .article-tag{font-size:.65rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;padding:3px 10px;border-radius:100px}
+    .tag-guide{background:rgba(148,204,255,.1);color:var(--primary)}
+    .tag-industry{background:rgba(148,204,255,.06);color:var(--on-surface-variant)}
+    .article-cta{padding:40px;border-radius:16px;background:rgba(20,55,84,.4);border:1px solid rgba(148,204,255,.08);text-align:center;margin:48px 0}
+    .article-cta h3{margin:0 0 12px;font-size:1.2rem}
+    .article-cta p{margin:0 0 20px;color:var(--on-surface-variant);font-size:.9rem}
+    .toc{padding:24px 32px;border-radius:12px;background:rgba(20,55,84,.3);border:1px solid rgba(148,204,255,.06);margin:0 0 40px}
+    .toc h4{font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;color:var(--on-surface-variant);opacity:.6;margin:0 0 12px}
+    .toc a{display:block;color:var(--primary);text-decoration:none;font-size:.85rem;padding:4px 0}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}.fade-up{animation:fadeUp 0.6s ease-out forwards}
+  </style>
+  <link rel="icon" href="/assets/img/tv-favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Work Order Documentation Best Practices: The Complete Guide for Field Service (2026)","description":"Master work order documentation in field service. Best practices for digital work orders, required fields, photo and video documentation, compliance, and software integration.","datePublished":"2026-04-06","dateModified":"2026-04-06","author":{"@type":"Organization","name":"TruVideo","url":"https://truvideo.co"},"publisher":{"@type":"Organization","name":"TruVideo","logo":{"@type":"ImageObject","url":"https://truvideo.co/assets/img/tv-logo-dark.svg"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://truvideo.co/articles/work-order-documentation-best-practices"},"image":"https://truvideo.co/assets/images/og-image.png"}</script>
+</head>
+<body>
+<div class="mesh-bg"></div>
+
+<nav class="site-nav"><div class="nav-inner"><a href="/" class="nav-logo" style="display:flex;align-items:center;gap:10px"><svg width="30" height="30" viewBox="0 0 48 48" fill="none" style="flex-shrink:0"><path d="M13 8L5 24L13 40" stroke="#0099D9" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M35 8L43 24L35 40" stroke="#0099D9" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="24" cy="24" r="10" fill="#0099D9" opacity="0.15"/><circle cx="24" cy="24" r="10" stroke="#0099D9" stroke-width="1.2" opacity="0.4"/><path d="M20 18.5L31 24L20 29.5Z" fill="#0099D9"/></svg><span style="font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-weight:800;font-size:27px;letter-spacing:-0.03em;line-height:1"><span style="color:#0099D9">Tru</span><span style="color:#FFFFFF">Video</span></span></a><button class="nav-toggle" aria-label="Menu">&#9776;</button><ul class="nav-links"><li class="nav-dropdown"><a href="/platform" class="nav-dropdown-trigger">Platform</a><div class="nav-dropdown-menu"><div class="dd-label">Capabilities</div><a href="/platform">Platform Overview</a><a href="/platform-video-sdk">Video SDK</a><a href="/platform-vqs">Video Query Service</a><a href="/platform-messaging">Intelligent Messaging</a><a href="/platform-ai">AI &amp; Computer Vision</a><a href="/trulabs">TruLabs — Glasses</a><div class="dd-label">Products</div><a href="/platform-inspect">Inspect</a><a href="/platform-engage">Engage</a><a href="/platform-insight">Insight</a><a href="/platform-intake">Intake</a><a href="/platform-reach">Reach</a><a href="/platform-assist">Assist</a></div></li><li class="nav-dropdown"><a href="/solutions-automotive" class="nav-dropdown-trigger">Solutions</a><div class="nav-dropdown-menu"><div class="dd-label">Industries</div><a href="/solutions-automotive">Automotive</a><a href="/solutions-fleet">Fleet &amp; Transportation</a><a href="/solutions-aviation">Aviation &amp; MRO</a><a href="/solutions-field-service">Field Service</a><a href="/solutions-insurance">Insurance</a><a href="/solutions-construction">Construction</a></div></li><li><a href="/truvideo" style="color:var(--tertiary)">TruVideo</a></li><li><a href="/partners">Partners</a></li><li class="nav-dropdown"><a href="/about" class="nav-dropdown-trigger">Company</a><div class="nav-dropdown-menu"><a href="/about">About</a><a href="/team">Team</a><a href="/news">News</a><a href="/careers">Careers</a></div></li><li><a href="/articles">Articles</a></li><li><a href="/tools">Tools</a></li><li><a href="/contact" class="nav-cta">Get a Demo</a></li></ul></div></nav>
+
+<section class="hero-sm section">
+  <a href="/articles" style="color:var(--primary);text-decoration:none;font-size:0.85rem;font-weight:500">&larr; Back to Articles</a>
+  <h1 class="fade-up" style="font-size:clamp(1.8rem,4vw,2.8rem);margin-top:16px">Work Order Documentation Best Practices: The Complete Guide for Field Service (2026)</h1>
+  <div class="article-tags">
+    <span class="article-tag tag-guide">Guide</span>
+    <span class="article-tag tag-industry">Field Service</span>
+  </div>
+  <div class="article-meta-bar">
+    <span>TruVideo Team</span>
+    <span>&middot;</span>
+    <span>April 2026</span>
+    <span>&middot;</span>
+    <span>15 min read</span>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="article-body">
+
+    <nav class="toc">
+      <h4>In This Article</h4>
+      <a href="#what-is">What Is Work Order Documentation</a>
+      <a href="#why-it-fails">Why Documentation Fails in Field Service</a>
+      <a href="#essential-fields">Essential Work Order Fields</a>
+      <a href="#digital-vs-paper">Digital vs. Paper Work Orders</a>
+      <a href="#photo-video">Photo and Video Documentation</a>
+      <a href="#compliance">Compliance Requirements</a>
+      <a href="#software-integration">Software Integration</a>
+      <a href="#checklist">Best Practices Checklist</a>
+      <a href="#ai-future">The Future: AI-Powered Documentation</a>
+    </nav>
+
+    <p>Work order documentation is the backbone of every field service operation. It is the paper trail — or increasingly, the digital trail — that proves work was performed, parts were used, time was logged, and the job was completed to specification. When documentation is thorough, accurate, and accessible, field service organizations run efficiently, disputes resolve quickly, and audits pass without incident. When documentation fails, the consequences ripple outward: billing errors, warranty gaps, unresolved liability, and regulatory findings.</p>
+
+    <p>Yet across the field service industry, work order documentation remains one of the most inconsistently executed functions. Technicians complete jobs under time pressure, managers rely on incomplete records, and finance teams reconcile billing from hand-scrawled notes. In 2026, as field service management software matures and customers demand more transparency, the organizations that master work order documentation will hold a measurable operational and commercial advantage over those that don't.</p>
+
+    <p>This guide covers everything field service operators, managers, and technology buyers need to know about work order documentation — from foundational definitions through compliance requirements, software integration, and the emerging standard of video-verified documentation. Whether you are transitioning from paper to digital, evaluating field service management software, or looking to close the gaps in your existing documentation practice, this is the reference you need.</p>
+
+    <h2 id="what-is">What Is Work Order Documentation</h2>
+
+    <p>A work order is a formal authorization and record of a task. In field service, it serves three simultaneous purposes: it authorizes a technician to perform a specific job, it structures the information needed to perform that job correctly, and it creates the historical record of what was actually done. Work order documentation is the totality of information captured before, during, and after a job that makes the work order a complete and defensible record.</p>
+
+    <p>The term "work order" encompasses a broad spectrum of use cases. A residential HVAC contractor dispatching a technician for a seasonal tune-up, a telecommunications company sending a crew to install fiber at a commercial building, a medical device company deploying a field engineer to calibrate equipment in a hospital — all of these generate work orders, and all require documentation that is specific to the task, the customer, the site, and the regulatory context of the work being performed.</p>
+
+    <p>At its most basic, a work order document answers six questions:</p>
+    <ul>
+      <li><strong>Who</strong> is performing the work, and who authorized it?</li>
+      <li><strong>What</strong> exactly needs to be done, and what was actually done?</li>
+      <li><strong>Where</strong> is the job site, and what are the relevant site conditions?</li>
+      <li><strong>When</strong> did the work begin, progress, and conclude?</li>
+      <li><strong>How</strong> was the work performed — what methods, parts, and tools were used?</li>
+      <li><strong>Why</strong> was the work needed — what failure, request, or scheduled trigger initiated the order?</li>
+    </ul>
+
+    <p>Modern <strong>work order documentation best practices</strong> extend well beyond these six questions. They include photographic and video evidence of conditions before and after the job, digital signatures from technicians and customers, GPS-verified site coordinates, timestamped activity logs, parts and materials traceability, and integration with billing, inventory, and compliance systems. The complete work order is not just a form — it is a structured data package that fuels every downstream function of the field service organization.</p>
+
+    <blockquote>
+      <p>A work order without visual documentation is like a medical record without diagnostic imaging. You have the notes, but you are missing the evidence. In field service, that gap is where disputes, warranty claims, and liability exposures live.</p>
+    </blockquote>
+
+    <h2 id="why-it-fails">Why Documentation Fails in Field Service</h2>
+
+    <p>If thorough work order documentation is so clearly valuable, why does documentation quality remain so inconsistent across the industry? The answer lies in a combination of structural, cultural, and technological factors that create persistent gaps between what should be captured and what actually gets recorded.</p>
+
+    <h3>Time Pressure and the Last-Mile Problem</h3>
+
+    <p>Technicians operate under constant schedule pressure. Back-to-back jobs, unexpected complexity, traffic delays, and parts availability issues all compress the time available for documentation. When a technician finishes a job, the most urgent priority is getting to the next one — not filling out a detailed form. This is the "last-mile problem" of field service documentation: the people who know the most about what happened are also the people with the least time and motivation to record it accurately.</p>
+
+    <p>Paper-based systems make this worse. A technician filling out a carbon-copy work order in a vehicle, trying to reconstruct details from memory after a two-hour job, will produce incomplete and sometimes inaccurate records. Key information — the actual fault code that triggered the repair, the specific model number of the replaced component, the exact condition of the equipment at arrival — gets lost or approximated.</p>
+
+    <h3>Missing Information That Creates Downstream Problems</h3>
+
+    <p>Incomplete work order documentation creates cascading problems that are often not discovered until significant cost has been incurred. Common missing-information failures include:</p>
+    <ul>
+      <li><strong>No pre-job condition record.</strong> Without documentation of the asset's state before work began, it is impossible to establish what damage or deficiency was pre-existing versus technician-caused. This is the source of a large proportion of field service disputes.</li>
+      <li><strong>Ambiguous parts identification.</strong> "Replaced filter" means almost nothing without a part number, manufacturer, and lot code. For warranty tracking, inventory reconciliation, and recall management, the specific part identity is essential.</li>
+      <li><strong>Missing timestamps.</strong> Labor billing disputes are almost always documentation disputes. Without reliable timestamps for job start, job end, travel time, and break periods, billing integrity is impossible to defend.</li>
+      <li><strong>No site hazard documentation.</strong> For safety and liability purposes, pre-existing site conditions — exposed wiring, water damage, structural hazards — should be documented before any work begins. Organizations that skip this step have no defense when a site-related incident occurs.</li>
+      <li><strong>Unsigned or improperly signed completion records.</strong> A work order that lacks a customer signature, or that carries an illegible or unauthorized signature, cannot be used to demonstrate customer acceptance. This undermines both payment collection and dispute resolution.</li>
+    </ul>
+
+    <h3>Poor Handoff Between Field and Office</h3>
+
+    <p>Even when a technician captures complete information, that information often fails to reach the systems that need it. Paper work orders get stacked, misplaced, or data-entered with errors days after the job. Photos taken on personal devices never make it into the job record. Notes written in the field don't match the structured fields in the back-office system. The result is a documentation record that exists in fragments across multiple systems and media — and cannot be trusted as complete.</p>
+
+    <h3>Disputes With No Visual Evidence</h3>
+
+    <p>Customer disputes are among the most expensive events in field service operations. When a customer claims the technician caused damage, that work was not completed, or that different work was performed than what was invoiced, the field service organization has to defend itself using whatever records exist. Without visual evidence — photographs or video showing the condition of the site and equipment before, during, and after the job — these disputes are often settled in favor of the customer simply because the organization cannot prove otherwise.</p>
+
+    <p>According to industry surveys, field service organizations that implement systematic visual documentation reduce dispute-related costs by 30 to 50 percent. The math is straightforward: a single resolved dispute pays for months of documentation tooling.</p>
+
+    <h2 id="essential-fields">Essential Work Order Fields</h2>
+
+    <p>Standardizing the fields captured on every work order is the foundation of consistent documentation quality. The specific fields required will vary by industry, job type, and regulatory context, but the following represent the universal minimum for professional field service documentation.</p>
+
+    <h3>Job Identification and Authorization</h3>
+    <ul>
+      <li><strong>Work order number</strong> — unique identifier that links the field record to all back-office systems</li>
+      <li><strong>Work order type</strong> — preventive maintenance, corrective repair, installation, inspection, emergency response</li>
+      <li><strong>Priority level</strong> — impacts scheduling, response time SLAs, and resource allocation</li>
+      <li><strong>Initiating event</strong> — customer request, scheduled maintenance trigger, sensor alert, regulatory inspection schedule, or incident response</li>
+      <li><strong>Authorizing party</strong> — who approved the work; critical for regulated industries and capital expenditure tracking</li>
+    </ul>
+
+    <h3>Customer and Site Information</h3>
+    <ul>
+      <li><strong>Customer name, account number, and contact</strong> — the person or organization responsible for the site</li>
+      <li><strong>Site address with GPS coordinates</strong> — physical address alone is insufficient for large campuses, remote sites, or multi-unit properties</li>
+      <li><strong>Site access instructions</strong> — gate codes, contact on-site, required PPE, security check-in procedures</li>
+      <li><strong>Asset or equipment identifier</strong> — serial number, tag number, or asset ID of the equipment being serviced</li>
+      <li><strong>Asset history reference</strong> — link to previous work orders for the same asset to provide technician context</li>
+    </ul>
+
+    <h3>Technician Assignment and Labor</h3>
+    <ul>
+      <li><strong>Assigned technician(s)</strong> — name, employee ID, and relevant certifications or license numbers</li>
+      <li><strong>Dispatch timestamp</strong> — when the technician was notified and accepted the job</li>
+      <li><strong>En route timestamp</strong> — when the technician began traveling to the site</li>
+      <li><strong>Arrival timestamp</strong> — GPS-verified time of arrival at the job site</li>
+      <li><strong>Work start timestamp</strong> — when actual work on the asset or job began</li>
+      <li><strong>Work complete timestamp</strong> — when the job was finished, distinct from departure</li>
+      <li><strong>Total labor hours by category</strong> — travel, diagnostic, repair, testing, documentation</li>
+    </ul>
+
+    <h3>Parts, Materials, and Equipment</h3>
+    <ul>
+      <li><strong>Part number and description</strong> — for every component installed or removed</li>
+      <li><strong>Manufacturer and lot/serial number</strong> — required for warranty tracking and recall compliance</li>
+      <li><strong>Quantity used</strong> — actual consumption versus estimated</li>
+      <li><strong>Parts source</strong> — technician van stock, customer-supplied, emergency procurement</li>
+      <li><strong>Removed components disposition</strong> — returned to stock, scrapped, returned to manufacturer, or retained for customer inspection</li>
+    </ul>
+
+    <h3>Work Description and Findings</h3>
+    <ul>
+      <li><strong>Problem description as reported</strong> — what the customer or system reported as the fault</li>
+      <li><strong>Technician findings</strong> — what was actually discovered upon inspection, including fault codes, measurement readings, and observed conditions</li>
+      <li><strong>Work performed</strong> — detailed narrative of actions taken, in sequence</li>
+      <li><strong>Test results</strong> — pass/fail readings, before-and-after measurements, functional verification results</li>
+      <li><strong>Recommendations</strong> — deferred work, follow-up items, warranty considerations, observed risks</li>
+    </ul>
+
+    <h3>Signatures and Acceptance</h3>
+    <ul>
+      <li><strong>Technician signature</strong> — certifying accuracy of the record</li>
+      <li><strong>Customer signature</strong> — acknowledging completion and accepting the work</li>
+      <li><strong>Customer name printed</strong> — to clarify the signature identity</li>
+      <li><strong>Signature timestamp</strong> — when the acceptance was captured</li>
+      <li><strong>Customer refusal notation</strong> — if the customer declines to sign, this must be documented with reason</li>
+    </ul>
+
+    <div class="article-cta">
+      <h3>See How TruVideo Transforms Field Service Documentation</h3>
+      <p>TruVideo adds video proof, AI analysis, and searchable visual records to any work order — turning standard documentation into a complete, defensible record of every job.</p>
+      <a href="/solutions-field-service" class="btn btn-primary">Explore the Field Service Solution</a>
+    </div>
+
+    <h2 id="digital-vs-paper">Digital vs. Paper Work Orders</h2>
+
+    <p>The field service industry's transition from paper to digital work orders has been underway for more than a decade, but the transition is far from complete. Industry estimates suggest that as of 2026, roughly 30 to 40 percent of field service work orders are still captured on paper or managed through hybrid paper-digital processes. Understanding the specific operational, financial, and compliance impacts of each approach is essential for organizations evaluating where they stand.</p>
+
+    <h3>The Hidden Costs of Paper Work Orders</h3>
+
+    <p>Paper work orders appear cheap — forms cost pennies, and there is no software subscription fee. But the total cost of paper-based documentation is substantially higher than organizations realize. Research consistently finds that field service organizations relying on paper documentation spend two to three times more on administrative back-office processing per work order than organizations running fully digital workflows. The cost accumulates through:</p>
+    <ul>
+      <li>Manual data entry from paper forms into billing and CRM systems — with associated error rates typically running 2 to 5 percent</li>
+      <li>Storage, retrieval, and management of physical work order archives</li>
+      <li>Lost or illegible forms that require technician callbacks and rework</li>
+      <li>Billing delays caused by the gap between job completion and office processing of paper forms</li>
+      <li>Dispute resolution costs caused by the inability to produce complete documentation quickly</li>
+      <li>Compliance risk from forms that fail audits due to missing fields, illegible entries, or lost records</li>
+    </ul>
+
+    <h3>Digital Work Order Benefits</h3>
+
+    <p>Digital field service work orders, delivered through mobile applications on smartphones or tablets, eliminate the structural inefficiencies of paper while enabling capabilities that paper can never match:</p>
+    <ul>
+      <li><strong>Guided data capture.</strong> Digital forms enforce required fields, validate data formats, and prevent submission of incomplete records. The technician cannot close the work order without completing mandatory sections — something paper cannot enforce.</li>
+      <li><strong>Real-time sync.</strong> Work order data is available to dispatchers, managers, and billing teams the moment it is submitted, eliminating the days-long delay inherent in paper workflows.</li>
+      <li><strong>Automatic timestamps.</strong> Digital systems capture arrival, work start, work end, and submission times automatically — eliminating the most common source of labor billing disputes.</li>
+      <li><strong>GPS verification.</strong> Mobile work order apps can record GPS coordinates at key events, providing location-verified proof of site presence at documented times.</li>
+      <li><strong>Photo and video attachment.</strong> Digital work orders allow technicians to attach media directly to the job record, creating a unified document that includes visual evidence alongside text records.</li>
+      <li><strong>Searchable historical records.</strong> Every completed digital work order is immediately searchable by asset, customer, technician, date, or any other field — enabling faster repeat-job preparation, warranty research, and audit response.</li>
+      <li><strong>Signature capture.</strong> Digital signatures with timestamps provide a legally stronger record of customer acceptance than handwritten signatures on paper.</li>
+    </ul>
+
+    <h3>Making the Transition</h3>
+
+    <p>Organizations transitioning from paper to digital work orders should plan for a three-to-six month change management period. The most common transition failures stem from technician resistance, inadequate mobile device hardware, and attempting to replicate paper form structures exactly in digital format rather than redesigning forms to take advantage of digital capabilities. The most successful transitions begin with a pilot program, invest in technician training, and build digital documentation requirements into performance metrics from the start.</p>
+
+    <h2 id="photo-video">Photo and Video Documentation</h2>
+
+    <p>Text-based work order fields capture what happened. Visual documentation proves it. In 2026, the combination of ubiquitous smartphone cameras, high-capacity mobile networks, and cloud storage has made systematic photo and video documentation not just possible but expected in professional field service operations. Organizations that have not yet implemented visual documentation standards are operating with a structural liability gap.</p>
+
+    <h3>Photography Standards for Work Orders</h3>
+
+    <p>Photos attached to work orders should follow consistent standards to be useful. Ad hoc snapshots taken without context — blurry close-ups with no reference for scale, or wide shots that don't capture the relevant detail — add storage overhead without adding evidentiary value. Professional field service photo documentation standards include:</p>
+    <ul>
+      <li><strong>Pre-job overview shot.</strong> A wide shot of the full asset or work area before any work begins, establishing baseline condition. This should include a visible date/time reference where possible.</li>
+      <li><strong>Pre-job detail shots.</strong> Close-up photos of the specific fault, damage, or condition that prompted the work order. These establish that the condition pre-existed the technician's arrival.</li>
+      <li><strong>Work in progress.</strong> Key steps in complex procedures, particularly any that involve disassembly, electrical work, or the installation of new components.</li>
+      <li><strong>Parts documentation.</strong> Photos of removed components, showing serial/part numbers where visible. Photos of new components being installed.</li>
+      <li><strong>Post-job completion shots.</strong> The same angles as the pre-job photos, showing the completed work and restored condition.</li>
+      <li><strong>Test result documentation.</strong> Screen captures or photos of test equipment readings confirming system performance after the repair.</li>
+    </ul>
+
+    <h3>Video Documentation: The New Standard</h3>
+
+    <p>Photographs capture moments. Video captures context, sequence, and conditions that photographs cannot convey. A 60-second walkthrough video of a job site provides more evidentiary value than a dozen still photos — it shows movement, operational status, ambient conditions, and the technician's observations in real time. Video documentation is rapidly becoming the expected standard in field service for four reasons:</p>
+
+    <ol>
+      <li><strong>Dispute resolution.</strong> Video is the most persuasive form of evidence in a customer dispute. A video showing the state of an asset at arrival — water damage, pre-existing corrosion, a customer's prior improper repair — is essentially irrefutable. Organizations with systematic video documentation resolve disputes faster and at lower cost than those relying on text records alone.</li>
+      <li><strong>Quality assurance.</strong> Supervisors and quality managers can review video documentation remotely, assessing whether procedures were followed correctly without being physically present on the job. This is particularly valuable for high-consequence work — electrical systems, pressure vessels, medical equipment — where QA review was previously only possible with a second person on site.</li>
+      <li><strong>Training and knowledge transfer.</strong> Documented video of experienced technicians performing complex procedures creates a training library with real-world context. A technician facing an unfamiliar variant of a job can search the video library for how a colleague handled a similar situation.</li>
+      <li><strong>Customer transparency.</strong> Sharing video documentation with customers — a walkthrough of the completed job, a recording of the before-and-after condition — builds trust and reduces the information asymmetry that drives disputes. Customers who can see what was done are less likely to question it.</li>
+    </ol>
+
+    <h3>Timestamped and GPS-Tagged Video</h3>
+
+    <p>Not all video documentation is created equal. Video that carries verifiable metadata — embedded timestamps, GPS coordinates, and technician identity — is substantially more valuable than video without these attributes. Metadata-tagged video can be used as evidence in legal proceedings, regulatory audits, and insurance claims in ways that unverified video cannot. When selecting tools for field service video documentation, organizations should prioritize platforms that:</p>
+    <ul>
+      <li>Embed timestamps and GPS coordinates directly in video metadata at the time of capture</li>
+      <li>Tag videos with technician identity and work order number automatically</li>
+      <li>Store video in tamper-evident cloud systems that can demonstrate chain of custody</li>
+      <li>Index video content so it is searchable by job, asset, technician, date, or AI-detected content</li>
+    </ul>
+
+    <blockquote>
+      <p>The question field service organizations face is not whether to adopt video documentation — it is whether to do so systematically with integrated tools, or reactively with inconsistent personal devices that generate footage no one can find or trust. The answer determines whether your documentation is an asset or a liability.</p>
+    </blockquote>
+
+    <h2 id="compliance">Compliance Requirements for Work Order Documentation</h2>
+
+    <p>For field service organizations operating in regulated industries, work order documentation is not simply good practice — it is a legal obligation. The specific requirements vary significantly by industry and jurisdiction, but the consequences of non-compliance are consistently severe: regulatory fines, loss of licensure, voided warranties, and civil liability.</p>
+
+    <h3>OSHA and Workplace Safety Documentation</h3>
+
+    <p>The Occupational Safety and Health Administration requires employers to document hazard identification, safety briefings, and incident-related work orders. Field service organizations performing work in environments with known hazards — electrical systems, confined spaces, heights, hazardous materials — must document pre-job hazard assessments, PPE usage, and safety sign-offs. Work orders that include safety-relevant tasks should capture:</p>
+    <ul>
+      <li>Pre-job hazard assessment completion and sign-off</li>
+      <li>Required PPE used during the job</li>
+      <li>Permit-to-work numbers for regulated activities (hot work, confined space, lockout/tagout)</li>
+      <li>Incident notation if any safety event occurred during the work</li>
+    </ul>
+
+    <h3>EPA and Environmental Compliance</h3>
+
+    <p>Field service organizations that handle refrigerants, lubricants, hazardous materials, or waste streams have Environmental Protection Agency documentation obligations. Refrigerant handling under Section 608 requires technician certification documentation and records of refrigerant quantities recovered, recycled, and recharged. Work orders in these contexts must capture materials handling data with sufficient specificity to support regulatory reporting.</p>
+
+    <h3>Industry-Specific Requirements</h3>
+
+    <p>Beyond cross-cutting federal requirements, many field service sectors face industry-specific documentation standards:</p>
+    <ul>
+      <li><strong>Medical equipment service.</strong> FDA 21 CFR Part 820 requires device maintenance records with specific component traceability. Service organizations working on FDA-regulated equipment must maintain work orders that satisfy medical device record requirements, including calibration certificates and component lot numbers.</li>
+      <li><strong>Telecommunications.</strong> FCC-regulated work on telecommunications infrastructure requires documentation of work performed, equipment installed, and compliance with technical standards. Network performance impact of maintenance activities must be recorded.</li>
+      <li><strong>Elevator and escalator service.</strong> State elevator inspection codes typically require work orders to document every preventive maintenance visit, test result, and corrective repair. These records must be available for state inspector review and are subject to specific retention requirements, commonly five to seven years.</li>
+      <li><strong>Fire suppression and alarm systems.</strong> NFPA 25 and NFPA 72 mandate detailed inspection and testing records for fire protection systems, with specific fields for test results, deficiencies found, and corrective actions taken. These records must be retained and made available to the authority having jurisdiction.</li>
+      <li><strong>Utility infrastructure.</strong> Electric, gas, and water utilities face NERC, PHMSA, and state PUC documentation requirements for maintenance of transmission and distribution infrastructure.</li>
+    </ul>
+
+    <h3>Retention Periods and Record Accessibility</h3>
+
+    <p>Compliance is not just about what you capture — it is about how long you keep it and how quickly you can produce it. Field service organizations should establish and enforce retention policies that meet the most demanding requirement applicable to any of their work, and should ensure that digital records are accessible within hours rather than days. Regulators and legal proceedings do not wait for organizations to locate archived paper files.</p>
+
+    <h2 id="software-integration">Software Integration for Work Order Management</h2>
+
+    <p>Work order documentation does not exist in isolation. The data captured in a work order flows into billing systems, inventory management, asset tracking, compliance reporting, and customer relationship management. The degree to which field service work order software integrates with these downstream systems determines whether documentation generates value or creates administrative burden.</p>
+
+    <h3>Field Service Management (FSM) Software</h3>
+
+    <p>FSM platforms are the operational core of digital field service. Leading platforms — including ServiceNow, Salesforce Field Service, Microsoft Dynamics 365 Field Service, ServiceMax, and IFS Field Service Management — provide mobile work order applications for technicians, dispatch management, scheduling optimization, and back-office workflow automation. When evaluating FSM software for work order documentation capabilities, the key questions are:</p>
+    <ul>
+      <li>Does the mobile app enforce required field completion before submission?</li>
+      <li>What media types can be attached to work orders, and what are the size and format limits?</li>
+      <li>How are timestamps and GPS coordinates captured and stored?</li>
+      <li>Can digital signatures be captured on the mobile device without a separate tool?</li>
+      <li>How quickly does field-submitted data sync to back-office systems?</li>
+      <li>What APIs are available for integration with ERP, billing, and compliance systems?</li>
+    </ul>
+
+    <h3>ERP Integration</h3>
+
+    <p>Enterprise resource planning systems — SAP, Oracle, Microsoft Dynamics — typically manage inventory, purchasing, and financial accounting. Work order data must flow into these systems for parts consumption to be recorded against inventory, labor to be posted against cost centers, and completed work to trigger customer billing. Integration quality determines whether this flow is automatic and real-time or requires manual reconciliation that introduces delays and errors.</p>
+
+    <h3>Asset Management Systems</h3>
+
+    <p>Work orders are the primary mechanism by which asset maintenance history is built. Every work order completed against a specific asset — identified by serial number, tag number, or asset ID — should automatically update that asset's maintenance record in the asset management or computerized maintenance management system (CMMS). This creates the complete asset lifecycle history that enables predictive maintenance, warranty management, and capital planning.</p>
+
+    <h3>Billing and Invoicing Integration</h3>
+
+    <p>Invoicing delay is one of the most expensive documentation failures in field service. Organizations that invoice within 24 hours of job completion collect faster and dispute less frequently than those that wait days or weeks. Digital work order systems that trigger billing workflows automatically upon work order closure — passing labor hours, parts, and travel data directly to the invoicing system — consistently outperform manual billing processes on days-sales-outstanding metrics.</p>
+
+    <h3>Video Documentation Integration</h3>
+
+    <p>Standard FSM platforms capture text, basic forms, and photos reasonably well. Video documentation — particularly video that carries metadata, AI analysis, and searchable content — typically requires a purpose-built integration. Platforms like <a href="/solutions-field-service">TruVideo's Field Service solution</a> integrate with existing FSM and ERP systems to add video capture, AI-powered content analysis, and visual record management to the work order, without requiring organizations to replace their existing systems of record.</p>
+
+    <div class="article-cta">
+      <h3>Add Video Intelligence to Your Existing Work Order System</h3>
+      <p>TruVideo integrates with leading FSM platforms to add video documentation, AI analysis, and searchable visual records without replacing your existing workflow. See how it works for field service.</p>
+      <a href="/solutions-field-service" class="btn btn-primary">Learn More About Field Service</a>
+    </div>
+
+    <h2 id="checklist">Work Order Documentation Best Practices Checklist</h2>
+
+    <p>The following checklist synthesizes the core principles of professional work order documentation into actionable standards. Organizations can use this as a baseline audit tool, comparing current practice against each item and identifying the highest-priority gaps to address.</p>
+
+    <h3>Before the Job</h3>
+    <ul>
+      <li>Work order issued with complete customer, site, and asset information — no blanks in required fields</li>
+      <li>Technician confirmed assignment with timestamp</li>
+      <li>Asset history reviewed and relevant prior work orders accessible to the technician before arrival</li>
+      <li>Site access instructions, safety requirements, and required certifications confirmed</li>
+      <li>Parts and materials required for the job identified and loaded on the vehicle or staged for delivery</li>
+    </ul>
+
+    <h3>Upon Arrival</h3>
+    <ul>
+      <li>GPS-verified arrival timestamp automatically captured by the mobile work order app</li>
+      <li>Pre-job video walkthrough recorded showing the full site and asset condition upon arrival</li>
+      <li>Pre-job photos taken of the specific fault, damage, or area to be worked on</li>
+      <li>Hazard assessment completed and documented if required by safety protocols</li>
+      <li>Customer or site representative contact confirmed and documented</li>
+    </ul>
+
+    <h3>During the Job</h3>
+    <ul>
+      <li>Work performed documented in real time or promptly following each significant step</li>
+      <li>Each part removed or installed captured with part number, serial number, and quantity</li>
+      <li>Key work-in-progress photos or video taken at procedural milestones</li>
+      <li>Unexpected findings documented immediately, with photos or video evidence and notification to dispatch or supervisor</li>
+      <li>Any deviations from the planned work scope documented with justification</li>
+    </ul>
+
+    <h3>Completing the Job</h3>
+    <ul>
+      <li>Post-job video walkthrough recorded showing completed work and restored asset condition</li>
+      <li>Functional test results documented with specific pass/fail criteria and measured values</li>
+      <li>Work narrative completed with sufficient detail to support billing, warranty, and future repeat jobs</li>
+      <li>Customer debrief completed and recommendations for deferred work documented</li>
+      <li>Customer signature captured digitally with timestamp</li>
+      <li>Technician signature captured certifying accuracy of the record</li>
+      <li>Work order submitted and sync confirmed before leaving the site</li>
+    </ul>
+
+    <h3>Back-Office Processing</h3>
+    <ul>
+      <li>Work order reviewed for completeness within 24 hours of submission</li>
+      <li>Parts consumption reconciled against van stock and inventory records</li>
+      <li>Labor hours verified against timestamp data</li>
+      <li>Invoice generated and issued within 24 to 48 hours of job completion</li>
+      <li>Work order data posted to asset maintenance history</li>
+      <li>Visual documentation indexed and accessible via work order number and asset ID</li>
+    </ul>
+
+    <h3>Ongoing Management</h3>
+    <ul>
+      <li>Documentation quality reviewed in regular technician performance feedback</li>
+      <li>Recurring documentation gaps tracked and addressed through targeted training</li>
+      <li>Retention policy enforced with automated archiving at required intervals</li>
+      <li>Documentation audit conducted semi-annually against compliance requirements</li>
+      <li>Video and photo library reviewed for quality and usefulness on a sample basis</li>
+    </ul>
+
+    <h2 id="ai-future">The Future: AI-Powered Work Order Documentation</h2>
+
+    <p>The evolution of work order documentation is moving beyond digital forms and attached photos into a new paradigm: AI-powered documentation that turns unstructured field capture into structured, searchable, actionable data. This shift is already underway at leading field service organizations, and it is set to fundamentally change what "complete documentation" means.</p>
+
+    <h3>Video as Structured Data</h3>
+
+    <p>The most significant near-term development in work order documentation is the ability to extract structured information from video. AI vision models can now analyze a technician's job site video and automatically identify: asset models and serial numbers from nameplates, fault conditions from visual inspection footage, component installation sequences, safety compliance (whether PPE was worn, whether safety protocols were followed), and before-and-after condition comparisons. This means video that was previously an unstructured attachment — useful for human review but invisible to systems — becomes a searchable, analyzable data source that can populate work order fields, trigger workflows, and flag exceptions automatically.</p>
+
+    <h3>AI-Assisted Fault Classification</h3>
+
+    <p>When a technician records a video walkthrough of a fault condition, AI analysis can cross-reference the visual signature against historical work orders and known failure patterns to suggest classification codes, likely root causes, and recommended repair procedures. This is not a replacement for technician expertise — it is an augmentation that gives technicians access to pattern-matched knowledge from thousands of similar jobs in seconds. The result is faster diagnosis, more consistent fault coding, and better data quality in the work order record.</p>
+
+    <h3>Automated Compliance Checking</h3>
+
+    <p>AI systems can review completed work orders against compliance rule sets before submission — flagging missing required fields, identifying documentation that does not meet regulatory standards, and requiring correction before the work order is closed. This moves compliance checking from a retrospective audit function to a real-time quality gate, reducing the cost and disruption of after-the-fact compliance findings.</p>
+
+    <h3>Predictive Intelligence from Documentation Data</h3>
+
+    <p>As organizations accumulate years of structured work order data — including AI-indexed visual documentation — the dataset becomes a powerful input for predictive maintenance and operations optimization. Patterns in fault types, repair outcomes, parts failure rates, and technician performance become visible at scale. Organizations can predict which assets are likely to fail before they do, optimize preventive maintenance intervals based on actual rather than scheduled failure rates, and identify training opportunities from documentation quality trends across the technician population.</p>
+
+    <h3>TruVideo: Turning Video Into Work Order Intelligence</h3>
+
+    <p>TruVideo's field service platform is built on the premise that work orders without video documentation are incomplete — and that video without AI analysis is underutilized. The platform integrates with existing FSM and ERP systems to add a complete visual documentation layer to every work order: pre-job capture, in-progress recording, and post-job completion video, all timestamped, GPS-tagged, and AI-analyzed at the point of upload.</p>
+
+    <p>TruVideo's AI engine extracts structured data from field video — asset identification, condition assessment, procedure verification — and populates work order fields automatically. The Video Query Service indexes every frame of every job, making the entire visual record searchable by content, not just by metadata. Managers can ask "show me all jobs where a specific part was replaced in the last 90 days" and surface both the work order records and the video evidence in a single query.</p>
+
+    <p>The result is work order documentation that is simultaneously more complete, more defensible, and more useful for operations than anything achievable with text and photos alone. It is the difference between a record that confirms a job was done and a visual intelligence asset that proves how it was done, that the outcome was correct, and that the organization can learn from the accumulated record of every job it has ever completed.</p>
+
+    <p>For field service organizations looking to close the gap between what their work orders say happened and what actually happened — and to turn that documentation into a competitive advantage — <a href="/solutions-field-service">TruVideo's field service solution</a> is the platform designed specifically for that transformation.</p>
+
+    <blockquote>
+      <p>In 2026, the field service organizations that win on documentation are not just capturing more information — they are turning every job into searchable, AI-analyzed visual intelligence that makes the next job faster, the next dispute shorter, and the next audit a formality.</p>
+    </blockquote>
+
+    <h2>Conclusion</h2>
+
+    <p>Work order documentation is simultaneously the most basic and most consequential practice in field service management. Done poorly, it drives billing disputes, compliance risk, operational inefficiency, and customer distrust. Done well, it becomes the operational foundation on which every other field service function depends — fast billing, defensible records, asset intelligence, technician accountability, and continuous improvement.</p>
+
+    <p>The path from poor documentation to excellent documentation runs through four stages: standardizing required fields so every work order captures the minimum necessary information; going digital so that documentation is enforced, timestamped, and immediately available to back-office systems; adding systematic visual documentation so that every work order carries a verifiable visual record of job conditions; and integrating AI so that visual documentation becomes structured, searchable data rather than an archive of unanalyzed video files.</p>
+
+    <p>Organizations at any stage of this journey can make meaningful progress with the right tools and the right organizational commitment. The first step is understanding where the gaps are — using the checklist in this guide as an audit framework — and prioritizing the changes with the highest impact on billing accuracy, dispute frequency, and compliance risk. The next step is ensuring that the tools available to field technicians make thorough documentation easier, not harder, so that capturing a complete record is the path of least resistance rather than an additional burden on an already demanding job.</p>
+
+    <p>The complete work order is not a compliance checkbox. It is the foundation of a field service organization that knows what it has done, can prove it did it right, and can learn from every job it has ever completed. That is the standard to aim for — and the technology exists today to make it achievable.</p>
+
+    <div class="article-cta">
+      <h3>Ready to Upgrade Your Work Order Documentation?</h3>
+      <p>See how TruVideo adds video proof, AI analysis, and searchable visual records to field service work orders — without replacing your existing FSM or ERP system.</p>
+      <a href="/solutions-field-service" class="btn btn-primary">Get a Field Service Demo</a>
+    </div>
+
+  </div>
+</section>
+
+<footer class="site-footer"><div class="footer-inner"><div class="footer-brand"><a href="/" class="nav-logo" style="display:flex;align-items:center;gap:10px"><svg width="30" height="30" viewBox="0 0 48 48" fill="none" style="flex-shrink:0"><path d="M13 8L5 24L13 40" stroke="#0099D9" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M35 8L43 24L35 40" stroke="#0099D9" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="24" cy="24" r="10" fill="#0099D9" opacity="0.15"/><circle cx="24" cy="24" r="10" stroke="#0099D9" stroke-width="1.2" opacity="0.4"/><path d="M20 18.5L31 24L20 29.5Z" fill="#0099D9"/></svg><span style="font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-weight:800;font-size:27px;letter-spacing:-0.03em;line-height:1"><span style="color:#0099D9">Tru</span><span style="color:#FFFFFF">Video</span></span></a><p>The visual intelligence platform that turns video into structured data, automated workflows, and verifiable proof.</p></div><div class="footer-col"><p class="footer-heading">Platform</p><a href="/platform">Overview</a><a href="/platform-video-sdk">Video SDK</a><a href="/platform-vqs">Video Query Service</a><a href="/platform-messaging">Messaging</a><a href="/platform-ai">AI &amp; Vision</a></div><div class="footer-col"><p class="footer-heading">Solutions</p><a href="/solutions-automotive">Automotive</a><a href="/solutions-fleet">Fleet</a><a href="/solutions-aviation">Aviation</a><a href="/solutions-field-service">Field Service</a><a href="/solutions-insurance">Insurance</a><a href="/solutions-construction">Construction</a></div><div class="footer-col"><p class="footer-heading">Company</p><a href="/about">About</a><a href="/team">Team</a><a href="/news">News</a><a href="/careers">Careers</a><a href="/partners">Partners</a><a href="/contact">Contact</a><a href="/tools">Tools</a><a href="/articles">Articles</a></div></div><div class="footer-bottom"><span>&copy; 2026 TruVideo, Inc. All rights reserved.</span><span><a href="/privacy" style="color:inherit;text-decoration:none;margin-right:16px">Privacy</a><a href="/terms" style="color:inherit;text-decoration:none">Terms</a></span></div></footer>
+
+<script>
+  const toggle = document.querySelector('.nav-toggle');
+  const links = document.querySelector('.nav-links');
+  toggle.addEventListener('click', () => links.classList.toggle('open'));
+  document.querySelectorAll('.nav-dropdown').forEach(d => {
+    d.querySelector('.nav-dropdown-trigger').addEventListener('click', e => {
+      if (window.innerWidth <= 1024) {
+        e.preventDefault();
+        d.classList.toggle('open');
+      }
+    });
+  });
+</script>
+</body>
+</html>
