@@ -168,6 +168,42 @@
 document.querySelector('.nav-toggle').addEventListener('click',function(){document.querySelector('.nav-links').classList.toggle('open')});
 document.querySelectorAll('.nav-dropdown-trigger').forEach(function(t){t.addEventListener('click',function(e){if(window.innerWidth<=1024){e.preventDefault();this.parentElement.classList.toggle('open')}})});
 </script>
-<script src="https://widget.prakashsoftware.in/widget.js/63479d4d-2f15-42da-81b7-3f30932c1523"></script>
+<script>
+(function(){
+  // Defer chat widget load until page is idle — saves ~1.5MB on initial load
+  var loaded=false;
+  function loadWidget(){
+    if(loaded)return;loaded=true;
+    // Monkey-patch createElement to intercept the iframe the widget creates
+    var origCreate=document.createElement.bind(document);
+    document.createElement=function(tag){
+      var el=origCreate(tag);
+      if(tag.toLowerCase()==='iframe'&&!window._bivoIframePatched){
+        window._bivoIframePatched=true;
+        // Store the real src setter — defer actual load until FAB click
+        var realSrc='';
+        Object.defineProperty(el,'src',{
+          set:function(v){realSrc=v;},
+          get:function(){return realSrc;}
+        });
+        // When FAB is clicked, load the iframe
+        setTimeout(function(){
+          var fab=document.querySelector('[class*="bivo"]')||document.querySelector('[style*="position: fixed"][style*="bottom"]');
+          if(fab){fab.addEventListener('click',function(){
+            if(realSrc&&!el.getAttribute('src')){el.setAttribute('src',realSrc);}
+          },{once:true});}
+        },100);
+        document.createElement=origCreate; // restore after first iframe
+      }
+      return el;
+    };
+    var s=document.createElement('script');
+    s.src='https://widget.prakashsoftware.in/widget.js/63479d4d-2f15-42da-81b7-3f30932c1523';
+    document.body.appendChild(s);
+  }
+  if('requestIdleCallback' in window){requestIdleCallback(loadWidget,{timeout:3000});}
+  else{setTimeout(loadWidget,3000);}
+})();
+</script>
 </body>
 </html>
